@@ -1,0 +1,2978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>APIx India — Sovereign Real-time Airfare Price Index | MoSPI</title>
+  <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary-fixed":"#0e1c2f","inverse-primary":"#bac7e1","tertiary-container":"#2f1500","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#ffb77d","background":"#faf8ff","primary":"#000000","secondary-fixed-dim":"#aac9f4","on-primary-fixed-variant":"#3a475c","error":"#ba1a1a","surface-container-low":"#f2f3ff","surface-dim":"#d2d9f4","secondary":"#426086","secondary-fixed":"#d3e4ff","on-tertiary-fixed":"#2f1500","on-tertiary":"#ffffff","on-secondary-fixed":"#001c38","tertiary-fixed":"#ffdcc3","tertiary":"#000000","surface-container":"#eaedff","on-primary":"#ffffff","surface-variant":"#dae2fd","on-error-container":"#93000a","on-secondary":"#ffffff","surface-bright":"#faf8ff","secondary-container":"#b3d1fd","surface-container-high":"#e2e7ff","surface":"#faf8ff","error-container":"#ffdad6","on-background":"#131b2e","primary-container":"#0e1c2f","on-surface":"#131b2e","primary-fixed-dim":"#bac7e1","on-primary-container":"#77849c","on-error":"#ffffff","on-secondary-container":"#3b5a7f","surface-tint":"#525f75","on-secondary-fixed-variant":"#29486d","on-tertiary-container":"#c76c00","on-surface-variant":"#44474c","primary-fixed":"#d6e3fe","outline":"#75777d","on-tertiary-fixed-variant":"#6e3900","inverse-on-surface":"#eef0ff","surface-container-highest":"#dae2fd","outline-variant":"#c5c6cd","inverse-surface":"#283044"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","space-sm":"0.375rem","margin-mobile":"0.75rem","space-xl":"1.5rem","margin":"1.5rem","space-lg":"1rem","gutter":"1rem","space-xs":"0.25rem","gutter-mobile":"0.5rem"},"fontFamily":{"body-md":["Inter"],"metric-xl":["JetBrains Mono"],"display-lg":["Inter"],"metric-md":["JetBrains Mono"],"metric-lg":["JetBrains Mono"],"headline-sm":["Inter"],"code-formula":["JetBrains Mono"],"label-mono":["JetBrains Mono"],"body-sm":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"metric-xl":["28px",{"lineHeight":"32px","letterSpacing":"-0.03em","fontWeight":"700"}],"display-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"metric-md":["14px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"600"}],"metric-lg":["20px",{"lineHeight":"24px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","fontWeight":"600"}],"code-formula":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-mono":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-sm":["11px",{"lineHeight":"15px","fontWeight":"400"}],"body-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg-mobile":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <div class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="w-full h-[2px] flex"><div class="w-1/3 bg-[#FF9933]"></div><div class="w-1/3 bg-[#FFFFFF]"></div><div class="w-1/3 bg-[#138808]"></div></div><div class="bg-primary text-on-primary border-b border-outline/20 px-4 sm:px-6 py-1 flex flex-wrap items-center justify-between text-body-sm"><div class="flex items-center space-x-2"><span class="material-symbols-outlined text-[14px] text-on-primary-container">account_balance</span><span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">GOVERNMENT OF INDIA • MINISTRY OF STATISTICS &amp; PROGRAMME IMPLEMENTATION (MoSPI) • NATIONAL STATISTICAL OFFICE (NSO)</span></div><div class="flex items-center space-x-3"><span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-mono text-body-sm px-2 py-0.5 rounded uppercase font-bold tracking-tight">DEMO ENVIRONMENT • PROTOTYPE STATISTICAL ENGINE • SYNTHETIC DEMONSTRATION DATA</span><div class="hidden md:flex items-center text-on-primary-container space-x-1 font-label-mono text-body-sm"><span class="material-symbols-outlined text-[13px]">security</span><span>DEL-NSO-04</span></div></div></div><div class="bg-surface-container-lowest border-b border-surface-variant px-4 sm:px-6 py-2.5"><div class="flex items-center justify-between gap-4"><div class="flex items-center space-x-3.5"><img alt="APIx India MoSPI Statistical Logo" class="h-8 w-auto object-contain" src="assets/logo.svg"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">APIx India</span><span class="bg-secondary-container text-on-secondary-container text-label-mono font-label-mono px-1.5 py-0.2 rounded uppercase">Official Release</span></div><span class="text-body-sm font-body-sm text-on-surface-variant hidden lg:inline-block">Real-time Airfare Price Index | Automated Airfare Intelligence for CPI Augmentation</span></div></div><div class="flex items-center space-x-4"><div class="hidden xl:flex items-center space-x-2 bg-surface-container-low px-2.5 py-1 rounded border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span></span><span class="font-label-mono text-label-mono text-on-surface-variant font-medium">Feed: <span id="live-telemetry-time" class="text-on-surface font-bold">IST 14:30:00 (Today)</span></span></div><div class="hidden md:flex items-center space-x-1.5 text-on-surface-variant font-label-mono text-label-mono"><span class="material-symbols-outlined text-[16px] text-secondary">pie_chart</span><span>94.6% Domestic ASK Monitored</span></div><button id="btn-header-bulletin" class="flex items-center space-x-1.5 bg-primary text-on-primary hover:bg-secondary transition-colors px-3 py-1.5 rounded font-body-md text-body-md"><span class="material-symbols-outlined text-[16px]">file_download</span><span class="font-medium">Generate National Bulletin</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div><nav class="bg-surface-container-low border-b border-surface-variant overflow-x-auto px-4 sm:px-6 flex items-center space-x-1" data-active-classes="bg-surface-container-highest text-on-surface font-bold border-b-2 border-primary"><a aria-current="page" class="px-3 py-2 whitespace-nowrap transition-colors bg-surface-container-highest text-on-surface font-bold border-b-2 border-primary" data-path="overview-dashboard" href="#">Overview Dashboard</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="airfare-price-index" href="#">Airfare Price Index</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="route-analytics" href="#">Route Analytics</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="airline-analytics" href="#">Airline Analytics</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="advance-purchase-matrix" href="#">Advance Purchase Matrix</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="data-pipeline-&amp;-sources" href="#">Data Pipeline &amp; Sources</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="quality-&amp;-anomalies" href="#">Quality &amp; Anomalies</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="cpi-augmentation" href="#">CPI Augmentation</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="methodology-(formulae)" href="#">Methodology (Formulae)</a><a class="px-3 py-2 text-body-sm font-body-sm whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="export-&amp;-bulletins" href="#">Export &amp; Bulletins</a></nav></div>
+
+  <!-- VIEW 1: OVERVIEW DASHBOARD & AIRFARE PRICE INDEX -->
+  <section id="view-overview" class="view-panel active">
+    <main class="w-full pt-32 bg-background min-h-screen px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col w-full space-y-6 pb-12">
+<!-- CONTROL CONSOLE & AUDIT HEADER --><div id="section-airfare-index"></div>
+<div class="w-full bg-surface-container-lowest p-4 rounded shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center space-x-2">
+<span class="px-2 py-0.5 bg-primary text-on-primary font-label-mono text-label-mono font-bold rounded">REF: NSO-APIX-2024-Q4</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-mono text-label-mono font-medium rounded">METHOD: LASPEYRES-JEVONS DUAL CHAIN</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-mono text-label-mono font-bold rounded uppercase tracking-wider">DEMONSTRATION DATA</span>
+</div>
+<div class="flex items-baseline space-x-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">National Airfare Price Index (APIx) Movement</h1>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Base: Jan 2023 = 100.00 | Microdata Frequency: 15-min Batch Cycle</span>
+</div>
+</div>
+<!-- PARAMETER TOOLBAR -->
+<div class="flex flex-wrap items-center gap-2 font-label-mono text-label-mono">
+<div class="flex items-center bg-surface-container-low px-2 py-1.5 rounded">
+<span class="text-on-surface-variant mr-2">Sampling Scope:</span>
+<select class="bg-transparent font-bold text-on-surface focus:outline-none cursor-pointer" id="scopeSelect">
+<option>Domestic Trunk 48 Pairs (87.2% Traffic)</option>
+<option>Regional Udan 24 Pairs (Synthetic Demo)</option>
+<option>All-India Composite (Full 72 Pairs)</option>
+</select>
+</div>
+<div class="flex items-center bg-surface-container-low px-2 py-1.5 rounded">
+<span class="text-on-surface-variant mr-2">Aggregation Period:</span>
+<span class="text-on-surface font-semibold">T-90 to T (01 Oct - 31 Dec 2024)</span>
+</div>
+<button class="flex items-center space-x-1.5 bg-surface-container-highest hover:bg-secondary-fixed text-on-surface px-3 py-1.5 rounded transition-colors">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+<span>Audit Parameters</span>
+</button>
+<button class="flex items-center space-x-1.5 bg-primary text-on-primary hover:bg-secondary transition-colors px-3 py-1.5 rounded shadow-sm">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+<span>CSV Microdata</span>
+</button>
+</div>
+</div>
+<!-- 1. TOP STATISTICAL KPI RIBBON (6 High-Density Metric Blocks) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-tertiary-fixed/30 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Headline APIx</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-label-mono px-1 rounded font-bold">LIVE-EST</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-2">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight" id="kpiIndexVal">112.8</span>
+<div class="flex items-center text-error font-label-mono text-label-mono font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+6.4% YoY</span>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>MoM: <strong class="text-on-surface">+2.1%</strong></span>
+<span>WoW: <strong class="text-on-surface">+0.8%</strong></span>
+<span>Base: 100.0</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">30-Day Mean Fare</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant">WEIGHTED</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-1.5">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight">₹5,420</span>
+<span class="text-error font-label-mono text-label-mono font-medium">+₹316</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Base Period: ₹5,104</span>
+<span class="text-secondary font-semibold">N=48 Pairs</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Routes Monitored</span>
+<span class="bg-surface-container-high text-on-surface text-[10px] font-label-mono px-1 rounded">DGCA WT</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-1.5">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight">48</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Pairs</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Coverage: 87.2% Domestic ASK</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Daily Harvest (24h)</span>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-1.5">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight">142,850</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>5 Carriers • 4 OTAs Scraped</span>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Pipeline Inventory</span>
+<span class="text-on-tertiary-container text-[10px] font-label-mono font-bold bg-tertiary-fixed px-1 rounded">NOMINAL</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-1.5">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight">94.6%</span>
+<span class="font-label-mono text-body-sm text-on-surface-variant">Scanned</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Latency: 114ms avg batch</span>
+</div>
+</div>
+<!-- KPI 6 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Integrity Index</span>
+<span class="bg-surface-container-highest text-on-surface text-[10px] font-label-mono px-1 rounded font-bold">GRADE A</span>
+</div>
+<div class="mt-2 flex items-baseline space-x-2">
+<span class="font-metric-xl text-metric-xl text-on-surface font-bold tracking-tight">93<span class="text-headline-sm text-on-surface-variant font-normal">/100</span></span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+</div>
+</div>
+<div class="mt-3 pt-2 bg-surface-container-low -mx-3.5 -mb-3.5 px-3.5 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Hampel Filter: 0.1% Filtered</span>
+</div>
+</div>
+</section>
+
+<!-- SECTION: LIVE WEB SCRAPING, MONITORING & DEDUPLICATION ENGINE -->
+<div id="live-scraper-console" class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-4 border border-surface-variant/60 my-2">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-surface-variant pb-3">
+    <div class="flex items-center space-x-3">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
+      </span>
+      <div>
+        <div class="flex items-center space-x-2">
+          <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Live Web Scraping &amp; Monitoring Engine</h3>
+          <span id="live-scraper-status-badge" class="bg-emerald-100 text-emerald-800 border border-emerald-300 text-label-mono font-label-mono px-2 py-0.5 rounded text-[11px] uppercase font-bold tracking-tight">Active • Auto-Scrapes On Visit</span>
+          <span class="bg-secondary-container text-on-secondary-container text-label-mono font-label-mono px-2 py-0.5 rounded text-[11px] uppercase font-bold">New Dataset</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Real-time corridor price poller with canonical SHA-256 deduplication and on-the-fly econometric indexing. Target: <code class="bg-surface-container-low px-1.5 py-0.5 rounded text-[11px] font-label-mono text-on-surface">Dataset1/Live_Scraped_Dataset.csv</code>.
+        </p>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-2">
+      <button id="btn-trigger-scrape" class="px-3.5 py-1.5 rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-body-sm text-body-sm flex items-center space-x-1.5 font-medium shadow-sm">
+        <span class="material-symbols-outlined text-[16px] text-emerald-400">sync</span>
+        <span>Trigger Live Scrape Now</span>
+      </button>
+      <a href="Dataset1/Live_Scraped_Dataset.csv" download="Live_Scraped_Dataset.csv" id="btn-download-live-csv" class="px-3 py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm flex items-center space-x-1.5 font-medium border border-surface-variant">
+        <span class="material-symbols-outlined text-[16px]">file_download</span>
+        <span>Export Scraped Dataset (CSV)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Telemetry Metrics Strip -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3">
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Total Quotes Processed</span>
+      <span id="live-total-processed" class="font-metric-lg font-bold text-on-surface block mt-0.5">0</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Cumulative Scraped</span>
+    </div>
+    
+    <div class="bg-amber-50/60 p-3 rounded border border-amber-200">
+      <span class="font-label-mono text-[10px] text-amber-800 uppercase font-bold block">Duplicates Eliminated</span>
+      <span id="live-duplicates-eliminated" class="font-metric-lg font-bold text-amber-900 block mt-0.5">0</span>
+      <span id="live-dedup-rate" class="text-[10px] text-amber-700 font-label-mono">Strict Unique Filter (0.0%)</span>
+    </div>
+
+    <div class="bg-emerald-50/60 p-3 rounded border border-emerald-200">
+      <span class="font-label-mono text-[10px] text-emerald-800 uppercase font-bold block">Unique Records Stored</span>
+      <span id="live-unique-stored" class="font-metric-lg font-bold text-emerald-900 block mt-0.5">0</span>
+      <span class="text-[10px] text-emerald-700 font-label-mono">Clean Dataset Entries</span>
+    </div>
+
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Live Jevons Geom Mean</span>
+      <span id="live-jevons-fare" class="font-metric-lg font-bold text-secondary block mt-0.5">₹0</span>
+      <span id="live-jevons-index" class="text-[10px] text-on-surface-variant font-label-mono">Index: 100.00</span>
+    </div>
+
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/50 col-span-2 sm:col-span-1">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Last Scrape Timestamp</span>
+      <span id="live-last-scrape-time" class="font-label-mono text-body-sm font-bold text-on-surface block mt-1">Pending visit trigger...</span>
+      <span class="text-[10px] text-emerald-600 font-label-mono font-medium flex items-center gap-1 mt-0.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> Automatic on Page Load
+      </span>
+    </div>
+  </div>
+
+  <!-- Live Streaming Quotes Ticker / Feed -->
+  <div class="space-y-2 pt-1">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-[16px] text-secondary">stream</span>
+        <span class="font-label-mono text-[11px] font-bold text-on-surface uppercase tracking-wider">Live Streaming Airfare Feed (Latest Microdata Ingestions)</span>
+      </div>
+      <span id="live-streaming-indicator" class="font-label-mono text-[11px] text-on-surface-variant">Streaming 10 most recent verified quotes</span>
+    </div>
+
+    <div class="overflow-x-auto rounded border border-surface-variant">
+      <table class="w-full text-left font-label-mono text-[11px]">
+        <thead class="bg-primary text-on-primary">
+          <tr>
+            <th class="p-2">Ingestion Time</th>
+            <th class="p-2">Flight Code</th>
+            <th class="p-2">Carrier</th>
+            <th class="p-2">Corridor</th>
+            <th class="p-2">Journey Date</th>
+            <th class="p-2">Horizon</th>
+            <th class="p-2">Class</th>
+            <th class="p-2 text-right">Fare (INR)</th>
+            <th class="p-2 text-center">Jevons Index</th>
+            <th class="p-2 text-center">Quality Status</th>
+          </tr>
+        </thead>
+        <tbody id="live-quotes-tbody" class="divide-y divide-surface-variant text-on-surface bg-surface-container-lowest">
+          <tr><td colspan="10" class="p-4 text-center text-on-surface-variant">Triggering live scrape engine on page visit...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between text-[11px] font-label-mono text-on-surface-variant px-1 gap-2">
+      <div>
+        <strong class="text-on-surface">Deduplication Integrity Rule:</strong> Identical entries matching <code class="bg-surface-container-low px-1 py-0.5 rounded">(Date, Flight, Class, Route, DepTime, Fare)</code> are eliminated; exactly one record is maintained in the dataset.
+      </div>
+      <div id="live-feed-sync-status" class="text-emerald-700 font-bold">Synchronized with Dataset1/Live_Scraped_Dataset.csv</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. PRIMARY INDEX MOVEMENT & DUAL-AXIS ECONOMETRIC TREND CHART -->
+<section class="bg-surface-container-lowest rounded p-5 shadow-sm space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div class="flex flex-col space-y-0.5">
+<div class="flex items-center space-x-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Real-time National Airfare Price Index (APIx) vs Base Period</span>
+<span class="bg-surface-container px-2 py-0.5 text-[10px] font-label-mono text-on-surface-variant rounded">OCT 2024 – DEC 2024</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily aggregations with 95% econometric confidence envelope. Shaded areas denote holiday/structural fleet shock horizons.</p>
+</div>
+<!-- INTERACTIVE CONTROLS -->
+<div class="flex flex-wrap items-center gap-1.5 font-label-mono text-label-mono">
+<div class="inline-flex bg-surface-container-low p-0.5 rounded">
+<button class="chart-freq-btn px-2.5 py-1 rounded text-on-surface font-semibold bg-surface-container-lowest shadow-sm" data-freq="daily">Daily</button>
+<button class="chart-freq-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" data-freq="7d">7-Day MA</button>
+<button class="chart-freq-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" data-freq="weekly">Weekly</button>
+<button class="chart-freq-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" data-freq="monthly">Monthly</button>
+</div>
+<div class="inline-flex bg-surface-container-low p-0.5 rounded ml-2">
+<button id="btn-base-2023" class="px-2 py-1 rounded font-bold text-on-surface bg-surface-container-lowest shadow-sm">Base 2023=100</button>
+<button id="btn-base-2019" class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface">Base 2019=100</button>
+</div>
+<button id="btn-download-series" class="ml-2 px-2 py-1 bg-surface-container hover:bg-surface-container-highest text-on-surface rounded flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span>Series</span>
+</button>
+</div>
+</div>
+<!-- CHART CANVAS CONTAINER (Pure CSS / SVG Vector Graphic) -->
+<div class="relative w-full h-80 bg-surface-container-low/40 rounded p-4 flex flex-col justify-between overflow-hidden">
+<!-- Y-Axis labels & Grid lines -->
+<div class="absolute inset-0 p-4 pointer-events-none flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Index 130.0</span>
+<div class="w-full mx-4 h-[1px] bg-surface-variant/40"></div>
+<span>₹6,240</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Index 120.0</span>
+<div class="w-full mx-4 h-[1px] bg-surface-variant/40"></div>
+<span>₹5,760</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Index 110.0</span>
+<div class="w-full mx-4 h-[1px] bg-surface-variant/40"></div>
+<span>₹5,280</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Index 100.0 (Base)</span>
+<div class="w-full mx-4 h-[1px] bg-primary/20"></div>
+<span>₹4,800</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-[10px]">
+<span>Index 90.0</span>
+<div class="w-full mx-4 h-[1px] bg-surface-variant/40"></div>
+<span>₹4,320</span>
+</div>
+</div>
+<!-- EVENT SHADED BANDS -->
+<div class="absolute inset-y-0 left-[24%] w-[16%] bg-tertiary-fixed/35 pointer-events-none rounded flex flex-col justify-between p-2">
+<div class="flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-mono text-[9px] font-bold text-on-tertiary-container uppercase">Diwali Spike Window</span>
+</div>
+<span class="font-label-mono text-[9px] text-on-tertiary-container font-semibold">+18.4% WoW Surge</span>
+</div>
+<div class="absolute inset-y-0 left-[58%] w-[11%] bg-secondary-container/40 pointer-events-none rounded flex flex-col justify-between p-2">
+<div class="flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[9px] font-bold text-on-secondary-container uppercase">Cyclone Dana Grounding</span>
+</div>
+<span class="font-label-mono text-[9px] text-on-secondary-container font-semibold">+9.2% East Corridor</span>
+</div>
+<!-- SVG TIME SERIES VECTOR CURVE -->
+<svg id="chart-national-trajectory" class="w-full h-full relative z-10 overflow-visible" preserveAspectRatio="none" viewBox="0 0 1000 240">
+  <defs>
+    <linearGradient id="ciGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop class="text-secondary/25" offset="0%" stop-color="currentColor"></stop>
+      <stop class="text-secondary/0" offset="100%" stop-color="currentColor"></stop>
+    </linearGradient>
+    <linearGradient id="lineGlow" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#426086"></stop>
+      <stop offset="50%" stop-color="#1E3E62"></stop>
+      <stop offset="100%" stop-color="#0B192C"></stop>
+    </linearGradient>
+  </defs>
+  <g id="traj-grid"></g>
+  <g id="traj-y-labels"></g>
+  <path id="traj-area-path" class="chart-area-path" fill="url(#ciGradient)" d=""></path>
+  <path id="traj-ma-path" class="chart-line-path text-on-surface-variant/60" fill="none" stroke="currentColor" stroke-dasharray="4 3" stroke-width="1.8" d=""></path>
+  <path id="traj-line-path" class="chart-line-path" fill="none" stroke="url(#lineGlow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d=""></path>
+  <g id="traj-points"></g>
+  <g id="traj-annotations"></g>
+  <g id="traj-x-labels"></g>
+  <rect id="traj-hit-overlay" width="1000" height="240" fill="transparent" style="cursor: crosshair;"></rect>
+</svg>
+<!-- X-Axis Timeline Dates -->
+<div class="relative z-10 pt-2 flex justify-between text-on-surface-variant font-label-mono text-[10px] uppercase">
+<span>01 Oct 2024</span>
+<span>15 Oct</span>
+<span class="font-bold text-on-surface">01 Nov (Diwali)</span>
+<span>15 Nov</span>
+<span class="font-bold text-on-surface">25 Nov (Dana)</span>
+<span>10 Dec</span>
+<span>20 Dec</span>
+<span class="font-bold text-on-surface">31 Dec 2024 (T)</span>
+</div>
+</div>
+<!-- CHART METRIC FOOTER & ANNOTATION -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-surface-container-low p-3 rounded text-body-sm text-on-surface-variant">
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1">
+<div class="w-3 h-0.5 bg-on-surface"></div>
+<span class="font-label-mono text-[11px] text-on-surface font-semibold">APIx Headline</span>
+</div>
+<div class="flex items-center space-x-1">
+<div class="w-3 h-0.5 bg-secondary border border-dashed border-secondary"></div>
+<span class="font-label-mono text-[11px]">7-Day Moving Avg</span>
+</div>
+<div class="flex items-center space-x-1">
+<div class="w-3 h-2 bg-secondary-container/50 rounded-sm"></div>
+<span class="font-label-mono text-[11px]">95% CI (±1.38 Pts)</span>
+</div>
+</div>
+<div class="font-label-mono text-[11px] text-on-surface-variant max-w-xl">
+<span class="font-bold text-on-surface">NSO Technical Note:</span> Index values represent weighted domestic passenger fare movements relative to Jan 2023. Laspeyres geometric aggregation applied over 48 DGCA trunk corridors.
+      </div>
+</div>
+</section>
+<!-- 3. INDIA AVIATION ROUTE NETWORK & PRICE SPATIAL MAP -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- LEFT: SPATIAL NETWORK SCHEMATIC (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-3">
+<div>
+<span class="font-label-mono text-[10px] uppercase text-secondary font-bold tracking-wider">Spatial Econometrics</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Domestic Route Matrix &amp; Fare Dispersion</h2>
+</div>
+<span class="bg-surface-container px-2 py-0.5 text-label-mono font-label-mono text-on-surface-variant rounded">ZONAL HUBS</span>
+</div>
+<!-- SCHEMATIC MAP VIEWPORT -->
+<div class="relative w-full h-80 bg-surface-container-low/50 rounded flex items-center justify-center p-3 overflow-hidden">
+<div class="absolute top-2 left-3 font-label-mono text-[10px] text-on-surface-variant flex flex-col space-y-0.5">
+<span>Node Weight: Scheduled Departures</span>
+<span>Line Vector: YoY Fare Differential</span>
+</div>
+<!-- Stylized Indian Hub Vector Topology -->
+<svg class="w-full h-full max-h-72" fill="none" viewbox="0 0 360 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Connective Flight Corridors -->
+<!-- DEL (150, 90) to BOM (80, 220) -->
+<line opacity="0.8" stroke="#426086" stroke-linecap="round" stroke-width="3" x1="150" x2="80" y1="90" y2="220"></line>
+<!-- DEL (150, 90) to BLR (130, 310) -->
+<line opacity="0.9" stroke="#000000" stroke-linecap="round" stroke-width="4" x1="150" x2="130" y1="90" y2="310"></line>
+<!-- DEL (150, 90) to CCU (270, 180) -->
+<line opacity="0.8" stroke="#426086" stroke-linecap="round" stroke-width="2.5" x1="150" x2="270" y1="90" y2="180"></line>
+<!-- DEL (150, 90) to HYD (155, 240) -->
+<line opacity="0.6" stroke="#426086" stroke-linecap="round" stroke-width="2" x1="150" x2="155" y1="90" y2="240"></line>
+<!-- BOM (80, 220) to BLR (130, 310) -->
+<line opacity="0.6" stroke="#75777d" stroke-linecap="round" stroke-width="2" x1="80" x2="130" y1="220" y2="310"></line>
+<!-- BOM (80, 220) to GOX (90, 260) -->
+<line opacity="0.9" stroke="#000000" stroke-dasharray="3 3" stroke-width="3" x1="80" x2="90" y1="220" y2="260"></line>
+<!-- BOM (80, 220) to CCU (270, 180) -->
+<line opacity="0.5" stroke="#75777d" stroke-width="1.5" x1="80" x2="270" y1="220" y2="180"></line>
+<!-- BLR (130, 310) to MAA (190, 315) -->
+<line opacity="0.7" stroke="#75777d" stroke-width="2" x1="130" x2="190" y1="310" y2="315"></line>
+<!-- BLR (130, 310) to HYD (155, 240) -->
+<line opacity="0.6" stroke="#426086" stroke-width="1.8" x1="130" x2="155" y1="310" y2="240"></line>
+<!-- CCU (270, 180) to HYD (155, 240) -->
+<line opacity="0.5" stroke="#75777d" stroke-width="1.5" x1="270" x2="155" y1="180" y2="240"></line>
+<!-- AMD (70, 160) to DEL (150, 90) -->
+<line opacity="0.5" stroke="#75777d" stroke-width="1.5" x1="70" x2="150" y1="160" y2="90"></line>
+<!-- NODES: Key Metropolitan Gateways -->
+<!-- DEL (Delhi) -->
+<circle cx="150" cy="90" fill="#0e1c2f" r="8"></circle>
+<circle cx="150" cy="90" fill="#0e1c2f" opacity="0.15" r="14"></circle>
+<text class="font-label-mono text-[10px] font-bold fill-on-surface" text-anchor="middle" x="150" y="75">DELHI (DEL)</text>
+<!-- BOM (Mumbai) -->
+<circle cx="80" cy="220" fill="#0e1c2f" r="7.5"></circle>
+<circle cx="80" cy="220" fill="#0e1c2f" opacity="0.15" r="13"></circle>
+<text class="font-label-mono text-[10px] font-bold fill-on-surface" text-anchor="end" x="45" y="224">BOM (MUMBAI)</text>
+<!-- BLR (Bengaluru) -->
+<circle cx="130" cy="310" fill="#0e1c2f" r="7"></circle>
+<circle cx="130" cy="310" fill="#0e1c2f" opacity="0.15" r="12"></circle>
+<text class="font-label-mono text-[10px] font-bold fill-on-surface" text-anchor="middle" x="110" y="328">BLR</text>
+<!-- CCU (Kolkata) -->
+<circle cx="270" cy="180" fill="#426086" r="6"></circle>
+<text class="font-label-mono text-[10px] font-bold fill-on-surface" text-anchor="start" x="285" y="184">CCU (KOLKATA)</text>
+<!-- HYD (Hyderabad) -->
+<circle cx="155" cy="240" fill="#426086" r="6"></circle>
+<text class="font-label-mono text-[9px] font-semibold fill-on-surface" text-anchor="start" x="170" y="244">HYD</text>
+<!-- MAA (Chennai) -->
+<circle cx="190" cy="315" fill="#426086" r="6"></circle>
+<text class="font-label-mono text-[9px] font-semibold fill-on-surface" text-anchor="start" x="205" y="320">MAA (CHENNAI)</text>
+<!-- GOX (Goa Mopa) -->
+<circle cx="90" cy="260" fill="#ba1a1a" r="4.5"></circle>
+<text class="font-label-mono text-[9px] font-bold fill-error" text-anchor="end" x="65" y="263">GOX</text>
+<!-- AMD (Ahmedabad) -->
+<circle cx="70" cy="160" fill="#75777d" r="4"></circle>
+<text class="font-label-mono text-[9px] fill-on-surface-variant" text-anchor="end" x="55" y="155">AMD</text>
+</svg>
+<!-- Floating Legend -->
+<div class="absolute bottom-2 right-2 bg-surface-container-lowest/90 backdrop-blur p-2 rounded shadow-sm text-[9px] font-label-mono space-y-1">
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-0.5 bg-primary"></span>
+<span>YoY &gt; +10% High Inelastic</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-0.5 bg-secondary"></span>
+<span>YoY +4% to +10% Moderate</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-0.5 bg-outline"></span>
+<span>YoY &lt; +4% Baseline</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between text-body-sm font-label-mono text-on-surface-variant">
+<span>Metropolitan Density: 6 Primary Nodes</span>
+<button class="text-secondary hover:text-primary font-bold flex items-center space-x-1 text-label-mono">
+<span>Inspect Spatial Clustering</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- RIGHT: HIGH-FREQUENCY SURVEILLANCE TABLE (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3">
+<div>
+<span class="font-label-mono text-[10px] uppercase text-secondary font-bold tracking-wider">Trunk Surveillance</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Key City-Pair Real-Time Microdata</h2>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-body-sm font-label-mono text-on-surface-variant">Sorted by: <strong>ASK Weight</strong></span>
+<button class="p-1 bg-surface-container hover:bg-surface-container-high rounded" title="Filter routes">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- High-Density Tabular Component -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary font-label-mono text-[11px] uppercase tracking-wider">
+<th class="py-2 px-3 font-semibold">Route Pair</th>
+<th class="py-2 px-2.5 font-semibold text-right">Mean Fare</th>
+<th class="py-2 px-2.5 font-semibold text-right">Sub-Index</th>
+<th class="py-2 px-2.5 font-semibold text-right">WoW Δ</th>
+<th class="py-2 px-2.5 font-semibold text-right">YoY Δ</th>
+<th class="py-2 px-2.5 font-semibold text-center">Volatility</th>
+<th class="py-2 px-2.5 font-semibold text-right">Sample N</th>
+<th class="py-2 px-3 font-semibold text-center">State</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-label-mono text-[12px]">
+<!-- Row 1: DEL -> BOM -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>DEL → BOM</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹5,860</td>
+<td class="py-2 px-2.5 text-right font-bold text-on-surface">114.2</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+2.4%</td>
+<td class="py-2 px-2.5 text-right text-error font-bold">+8.7%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-surface-container text-on-surface text-[10px] rounded">MED</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">3,420</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-surface-container-high text-on-surface text-[10px] font-bold rounded">NORMAL</span></td>
+</tr>
+<!-- Row 2: DEL -> BLR -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/20">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>DEL → BLR</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹6,200</td>
+<td class="py-2 px-2.5 text-right font-bold text-error">118.1</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+3.1%</td>
+<td class="py-2 px-2.5 text-right text-error font-bold">+11.2%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-error-container text-on-error-container text-[10px] font-bold rounded">HIGH</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">2,980</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-error-container text-on-error-container text-[10px] font-bold rounded">ELEVATED</span></td>
+</tr>
+<!-- Row 3: BOM -> BLR -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>BOM → BLR</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹4,300</td>
+<td class="py-2 px-2.5 text-right font-bold text-on-surface">106.7</td>
+<td class="py-2 px-2.5 text-right text-secondary font-medium">-0.8%</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+4.1%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-surface-container text-on-surface text-[10px] rounded">LOW</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">2,150</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-surface-container-high text-on-surface text-[10px] font-bold rounded">STABLE</span></td>
+</tr>
+<!-- Row 4: DEL -> CCU -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>DEL → CCU</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹5,120</td>
+<td class="py-2 px-2.5 text-right font-bold text-on-surface">109.4</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+1.2%</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+5.9%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-surface-container text-on-surface text-[10px] rounded">MED</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">1,840</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-surface-container-high text-on-surface text-[10px] font-bold rounded">NORMAL</span></td>
+</tr>
+<!-- Row 5: BLR -> HYD -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>BLR → HYD</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹3,150</td>
+<td class="py-2 px-2.5 text-right font-bold text-on-surface">102.3</td>
+<td class="py-2 px-2.5 text-right text-secondary font-medium">-1.5%</td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant font-medium">+1.8%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-surface-container text-on-surface text-[10px] rounded">LOW</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">1,620</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-surface-container-high text-on-surface text-[10px] font-bold rounded">BASELINE</span></td>
+</tr>
+<!-- Row 6: BOM -> GOX -->
+<tr class="hover:bg-surface-container-low transition-colors bg-error-container/10">
+<td class="py-2 px-3 font-bold text-on-surface flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>BOM → GOX</span>
+</td>
+<td class="py-2 px-2.5 text-right font-semibold text-on-surface">₹4,980</td>
+<td class="py-2 px-2.5 text-right font-bold text-error">122.5</td>
+<td class="py-2 px-2.5 text-right text-error font-medium">+6.8%</td>
+<td class="py-2 px-2.5 text-right text-error font-bold">+14.6%</td>
+<td class="py-2 px-2.5 text-center"><span class="px-1.5 py-0.5 bg-error-container text-on-error-container text-[10px] font-bold rounded">HIGH</span></td>
+<td class="py-2 px-2.5 text-right text-on-surface-variant">1,410</td>
+<td class="py-2 px-3 text-center"><span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded uppercase">SEASONAL SPIKE</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pt-3 border-t border-surface-variant/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Showing 6 of 48 Priority Trunk City-Pairs</span>
+<button class="flex items-center space-x-1 bg-surface-container hover:bg-surface-container-highest text-on-surface px-3 py-1 rounded font-body-sm font-semibold transition-colors">
+<span>Open Detailed Route Inspector</span>
+<span class="material-symbols-outlined text-[15px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. HIGH-FREQUENCY DATA PIPELINE TELEMETRY -->
+<section class="bg-surface-container-lowest p-5 rounded shadow-sm space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_tree</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Automated High-Frequency Econometric Pipeline Architecture</h2>
+</div>
+<div class="flex items-center space-x-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-mono text-label-mono text-on-surface font-bold">32 Sovereign Pipeline Microservices Operational</span>
+</div>
+</div>
+<!-- 6 Interconnected Architectural Stages -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2 font-label-mono">
+<!-- Stage 1 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant font-bold">STAGE 01</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-[12px]">Source Scrape</div>
+<p class="text-[11px] text-on-surface-variant">5 Airlines + 4 OTAs</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/50 text-[10px] text-on-surface flex justify-between">
+<span>Daily Vol:</span>
+<strong>142,850 rec</strong>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant font-bold">STAGE 02</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-[12px]">HTTP Ingest Engine</div>
+<p class="text-[11px] text-on-surface-variant">Distributed Cluster</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/50 text-[10px] text-on-surface flex justify-between">
+<span>Success Rate:</span>
+<strong>99.4% (0.6% ret)</strong>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant font-bold">STAGE 03</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-[12px]">Deduplication</div>
+<p class="text-[11px] text-on-surface-variant">Fare Tax Normalizer</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/50 text-[10px] text-on-surface flex justify-between">
+<span>Purged Dups:</span>
+<strong>12,410 / day</strong>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant font-bold">STAGE 04</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-[12px]">Outlier Filter</div>
+<p class="text-[11px] text-on-surface-variant">Tukey IQR + Hampel</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/50 text-[10px] text-on-surface flex justify-between">
+<span>Anomalies Flagged:</span>
+<strong>148 isolated</strong>
+</div>
+</div>
+<!-- Stage 5 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant font-bold">STAGE 05</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<div class="font-bold text-on-surface text-[12px]">Weight Aggregator</div>
+<p class="text-[11px] text-on-surface-variant">DGCA Traffic ASK Matrix</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/50 text-[10px] text-on-surface flex justify-between">
+<span>Horizon Horizon:</span>
+<strong>T+1 to T+45</strong>
+</div>
+</div>
+<!-- Stage 6 -->
+<div class="bg-primary text-on-primary p-3 rounded flex flex-col justify-between space-y-2 relative">
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-primary-container font-bold">STAGE 06</span>
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest"></span>
+</div>
+<div>
+<div class="font-bold text-on-primary text-[12px]">Index Release</div>
+<p class="text-[11px] text-inverse-primary">MoSPI Sovereign Vault</p>
+</div>
+<div class="pt-2 border-t border-surface-variant/20 text-[10px] text-on-primary flex justify-between">
+<span>API Latency:</span>
+<strong>24ms Sync</strong>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. CPI AUGMENTATION & MATHEMATICAL METHODOLOGY FOOTER -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- CPI Augmentation Lead Indicator Callout (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-5 rounded shadow-sm flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center space-x-2">
+<span class="px-2 py-0.5 bg-secondary text-on-secondary font-label-mono text-[10px] font-bold rounded">NSO CPI INTEGRATION STUDY</span>
+<span class="font-label-mono text-[11px] text-on-surface-variant">Classification Code: 5.3.01 (Air Transport)</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-1">High-Frequency Price Indicator (HFPI) for CPI Transport Sub-Group</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+          The APIx is an experimental econometric initiative designed by the National Statistical Office (NSO) to assess the statistical validity of alternative web-scraped microdata for official Consumer Price Index (CPI) augmentation. By monitoring 140,000+ daily booking points across the 48 core domestic air travel corridors, APIx computes a high-fidelity continuous price trajectory that leads official survey bulletins by up to <strong>24 days</strong>.
+        </p>
+</div>
+<div class="grid grid-cols-3 gap-3 bg-surface-container-low p-3 rounded font-label-mono">
+<div>
+<span class="text-[10px] text-on-surface-variant uppercase">Official CPI Lag</span>
+<div class="text-[14px] font-bold text-on-surface">T + 12 Days</div>
+</div>
+<div>
+<span class="text-[10px] text-on-surface-variant uppercase">APIx Real-Time Lead</span>
+<div class="text-[14px] font-bold text-secondary">T - 0 (Immediate)</div>
+</div>
+<div>
+<span class="text-[10px] text-on-surface-variant uppercase">Historical Correlation</span>
+<div class="text-[14px] font-bold text-on-surface">r = 0.894 (p &lt; 0.001)</div>
+</div>
+</div>
+</div>
+<!-- Mathematical Formula Preview Block (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-low p-5 rounded shadow-sm border-l-4 border-l-primary flex flex-col justify-between space-y-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Econometric Formulation</span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold">Chain-Linked Modified Laspeyres</span>
+</div>
+<div class="mt-3 bg-surface-container-lowest p-3.5 rounded shadow-inner font-code-formula text-code-formula text-on-surface">
+<div class="text-center font-bold text-[13px] text-on-surface tracking-wide">
+            APIx<sub>t</sub> = [ Σ ( w<sub>i,0</sub> × ( P<sub>i,t</sub> / P<sub>i,0</sub> ) ) ] × 100
+          </div>
+<div class="mt-2.5 text-[10px] text-on-surface-variant border-t border-surface-variant/40 pt-2 flex flex-col space-y-1">
+<div class="flex justify-between">
+<span>w<sub>i,0</sub>: DGCA Domestic Scheduled Capacity Weight</span>
+<span class="font-bold">48 Trunk Pairs</span>
+</div>
+<div class="flex justify-between">
+<span>P<sub>i,t</sub>: Jevons Geometric Mean Fare at Horizon T+h</span>
+<span class="font-bold">h ∈ [1, 45] days</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-label-mono text-on-surface-variant">
+<span>Formula Document: MoSPI-WP-2024-04</span>
+<button class="text-primary hover:text-secondary font-bold flex items-center space-x-1 text-label-mono">
+<span>Read Full Methodology Proof</span>
+<span class="material-symbols-outlined text-[13px]">menu_book</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- CLIENT-SIDE MICRO-INTERACTIVITY -->
+<script>
+  (function() {
+    // Frequency switcher interactive preview
+    const freqBtns = document.querySelectorAll('.chart-freq-btn');
+    freqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        freqBtns.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface', 'font-semibold');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface', 'font-semibold');
+        btn.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // Scope selector trigger simulation
+    const scopeSelect = document.getElementById('scopeSelect');
+    const kpiIndexVal = document.getElementById('kpiIndexVal');
+    if (scopeSelect && kpiIndexVal) {
+      scopeSelect.addEventListener('change', (e) => {
+        if (e.target.value.includes('Regional')) {
+          kpiIndexVal.textContent = '109.4';
+        } else if (e.target.value.includes('All-India')) {
+          kpiIndexVal.textContent = '111.9';
+        } else {
+          kpiIndexVal.textContent = '112.8';
+        }
+      });
+    }
+  })();
+</script>
+    </main>
+  </section>
+
+  <!-- VIEW 2: ROUTE ANALYTICS, AIRLINE ANALYTICS & ADVANCE PURCHASE -->
+  <section id="view-route" class="view-panel">
+    <main class="w-full pt-32 bg-background min-h-screen px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col w-full space-y-6">
+<!-- DEMONSTRATION & SOVEREIGN STATUS BANNER -->
+<div class="w-full bg-surface-container-high rounded-lg p-3 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface font-semibold">
+        OFFICIAL STATISTICAL ENGINE • SECURE RECONCILIATION NODE DEL-NSO-04
+      </span>
+<span class="text-on-surface-variant font-body-sm hidden md:inline">|</span>
+<span class="text-on-surface-variant font-body-sm hidden md:inline">Microdata Provenance: Scheduled Air Operator Certificate (AOC) Pipeline</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-mono text-label-mono font-bold">
+        DEMONSTRATION STATISTICAL DATA ONLY
+      </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Method: Chain-Laspeyres NSO-REV-24</span>
+</div>
+</div>
+<!-- SECTION 1: ROUTE SELECTOR & RECONCILIATION BAR -->
+<div class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-5">
+<!-- Top Filter Row -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">connecting_airports</span>
+<label class="font-label-mono text-label-mono uppercase text-on-surface-variant font-semibold">Target Route:</label>
+</div>
+<!-- Primary Route Picker -->
+<div class="relative inline-block">
+<select class="appearance-none bg-surface-container-low text-on-surface font-headline-sm text-headline-sm font-bold pl-3 pr-9 py-1.5 rounded cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary transition-colors" id="routePicker">
+<option selected="" value="DEL-BOM">DEL (Indira Gandhi Intl) ⇄ BOM (Chhatrapati Shivaji Maharaj Intl)</option>
+<option value="BLR-DEL">BLR (Kempegowda Intl) ⇄ DEL (Indira Gandhi Intl)</option>
+<option value="BOM-BLR">BOM (Chhatrapati Shivaji Maharaj Intl) ⇄ BLR (Kempegowda)</option>
+<option value="DEL-CCU">DEL (Indira Gandhi Intl) ⇄ CCU (Netaji Subhash Chandra Bose)</option>
+<option value="DEL-HYD">DEL (Indira Gandhi Intl) ⇄ HYD (Rajiv Gandhi Intl)</option>
+<option value="BOM-HYD">BOM (Chhatrapati Shivaji Maharaj Intl) ⇄ HYD (Rajiv Gandhi)</option>
+<option value="DEL-MAA">DEL (Indira Gandhi Intl) ⇄ MAA (Chennai Intl)</option>
+<option value="CCU-BLR">CCU (Netaji Subhash Chandra Bose) ⇄ BLR (Kempegowda)</option>
+<option value="BOM-GOI">BOM (Chhatrapati Shivaji Maharaj Intl) ⇄ GOI (Dabolim Intl)</option>
+<option value="DEL-PNQ">DEL (Indira Gandhi Intl) ⇄ PNQ (Pune Intl)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+<!-- Directional Segmentation Pill -->
+<div class="flex items-center bg-surface-container-low rounded p-0.5" id="directionFilter">
+<button class="px-2.5 py-1 text-label-mono font-label-mono rounded bg-primary text-on-primary font-semibold transition-all" data-dir="bidirectional">Bi-directional Average</button>
+<button class="px-2.5 py-1 text-label-mono font-label-mono rounded text-on-surface-variant hover:text-on-surface font-semibold transition-all" data-dir="del-bom">DEL → BOM</button>
+<button class="px-2.5 py-1 text-label-mono font-label-mono rounded text-on-surface-variant hover:text-on-surface font-semibold transition-all" data-dir="bom-del">BOM → DEL</button>
+</div>
+</div>
+<!-- Live Stream Info / Timestamp -->
+<div class="flex items-center space-x-3 self-end lg:self-auto">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Observation Horizon:</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-mono text-label-mono font-bold rounded">T-60 Days (Rolling)</span>
+<button class="p-1.5 rounded hover:bg-surface-container transition-colors text-on-surface-variant" title="Refresh Route Telemetry">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Parameter Filters Secondary Strip -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<div class="flex items-center space-x-1.5 bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Airline:</span>
+<select class="bg-transparent font-label-mono text-label-mono font-semibold text-on-surface focus:outline-none cursor-pointer">
+<option>All 5 Active Carriers</option>
+<option>IndiGo (6E)</option>
+<option>Air India (AI)</option>
+<option>Akasa Air (QP)</option>
+<option>SpiceJet (SG)</option>
+<option>AIX Connect (IX)</option>
+</select>
+</div>
+<div class="flex items-center space-x-1.5 bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Cabin Class:</span>
+<span class="font-label-mono text-label-mono font-bold text-on-surface">Economy Non-Stop Only</span>
+</div>
+<div class="flex items-center space-x-1.5 bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Booking Horizon:</span>
+<select class="bg-transparent font-label-mono text-label-mono font-semibold text-on-surface focus:outline-none cursor-pointer">
+<option>All T+ Windows (T+1 to T+45)</option>
+<option>Distress (T+1 to T+3)</option>
+<option>Short Advance (T+4 to T+10)</option>
+<option>Standard (T+11 to T+25)</option>
+<option>Long Horizon (T+26 to T+45)</option>
+</select>
+</div>
+<div class="flex items-center space-x-1.5 bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Source Blend:</span>
+<span class="font-label-mono text-label-mono font-semibold text-on-surface">GDS Direct (72%) + OTA (28%)</span>
+</div>
+<div class="ml-auto">
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-2 py-1 rounded">
+          NSO Basket Code: <strong class="text-on-surface">DOM-TRN-AIR-0101</strong>
+</span>
+</div>
+</div>
+<!-- Quick KPI Stats Bar for Selected Route -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low p-3.5 rounded">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">Route Fare Index</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.2 rounded bg-surface-variant text-on-surface font-semibold">Base 2023=100</span>
+</div>
+<div class="flex items-baseline space-x-2 mt-1">
+<span class="font-metric-xl text-metric-xl font-bold text-on-surface">114.2</span>
+<span class="font-label-mono text-label-mono font-bold text-error">+1.4 pts vs Nat. (112.8)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 74%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 block">MoM Inflation: +2.85% | Confidence 99.4%</span>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low p-3.5 rounded">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">7-Day Moving Median</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Cleaned</span>
+</div>
+<div class="flex items-baseline space-x-2 mt-1">
+<span class="font-metric-xl text-metric-xl font-bold text-on-surface">₹5,860</span>
+<span class="font-label-mono text-label-mono font-semibold text-on-surface-variant">IQR: ±₹420</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant mt-2">
+<span>Range: ₹4,100 – ₹11,200</span>
+<span class="text-secondary font-label-mono">σ = ₹845</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Adjusted for fuel surcharge &amp; standard airport fee</span>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low p-3.5 rounded">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">Seat-Km Weight (ASK)</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.2 rounded bg-surface-variant text-on-surface font-semibold">Weight Rank #1</span>
+</div>
+<div class="flex items-baseline space-x-2 mt-1">
+<span class="font-metric-xl text-metric-xl font-bold text-on-surface">8.42%</span>
+<span class="font-label-mono text-label-mono font-bold text-secondary">National Domestic Basket</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84.2%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 block">Total Monthly Available Seats: ~398,000</span>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low p-3.5 rounded">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-mono text-label-mono uppercase tracking-wider font-semibold">Daily Monitored Flights</span>
+<span class="font-label-mono text-label-mono px-1.5 py-0.2 rounded bg-surface-variant text-on-surface font-semibold">Active Sampling</span>
+</div>
+<div class="flex items-baseline space-x-2 mt-1">
+<span class="font-metric-xl text-metric-xl font-bold text-on-surface">64</span>
+<span class="font-label-mono text-label-mono font-semibold text-on-surface-variant">Across 4 AOCs</span>
+</div>
+<div class="flex items-center space-x-2 text-body-sm font-body-sm text-on-surface-variant mt-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Daily observations $n = 384$ fare records/day</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block">Yield telemetry latency: 18ms</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2 & 3: BENTO GRID WITH 60-DAY TIMESERIES & ADVANCE HORIZON CURVE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div id="section-airline-analytics"></div><!-- CHART 1: FARE MOVEMENT OVER TIME & CARRIER COMPARISON (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-lg p-5 shadow-sm flex flex-col justify-between space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Fare Movement &amp; Carrier Trajectories</span>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">T-60d to Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Laspeyres composite index vs underlying airline carrier medians for DEL ⇄ BOM (Economy Non-stop).
+          </p>
+</div>
+<!-- Series Toggles Legend -->
+<div class="flex flex-wrap items-center gap-3 font-label-mono text-label-mono">
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-1 bg-primary rounded-full"></span>
+<span class="text-on-surface font-bold">Composite Basket</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-1 bg-secondary rounded-full"></span>
+<span class="text-on-surface-variant">IndiGo (6E)</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-1 bg-on-tertiary-container rounded-full"></span>
+<span class="text-on-surface-variant">Air India (AI)</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-1 bg-secondary-fixed-dim rounded-full"></span>
+<span class="text-on-surface-variant">Akasa (QP)</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="w-3 h-1 bg-error rounded-full"></span>
+<span class="text-on-surface-variant">SpiceJet (SG)</span>
+</div>
+</div>
+</div>
+<!-- Multi-line SVG Chart Canvas with Divergence Highlighting -->
+<div class="relative w-full h-72 bg-surface-container-low rounded p-3 flex flex-col justify-between overflow-hidden">
+<!-- SVG Plot -->
+<svg id="chart-carrier-dispersion" class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 700 240">
+  <defs>
+    <linearGradient id="basketArea" x1="0" x2="0" y1="0" y2="1">
+      <stop class="text-secondary" offset="0%" stop-color="currentColor" stop-opacity="0.18"></stop>
+      <stop class="text-secondary" offset="100%" stop-color="currentColor" stop-opacity="0.0"></stop>
+    </linearGradient>
+  </defs>
+  <g id="carrier-grid"></g>
+  <g id="carrier-y-labels"></g>
+  <g id="carrier-surge-bands"></g>
+  <path id="carrier-basket-area" fill="url(#basketArea)" d=""></path>
+  <g id="carrier-lines"></g>
+  <g id="carrier-points"></g>
+  <g id="carrier-x-labels"></g>
+  <rect id="carrier-hit-overlay" width="700" height="240" fill="transparent" style="cursor: crosshair;"></rect>
+</svg>
+<!-- Simulated Floating Precision Tooltip -->
+<div class="absolute right-12 top-4 bg-surface-container-lowest p-3 rounded shadow-md pointer-events-none text-left max-w-xs z-10">
+<div class="flex items-center justify-between pb-1.5">
+<span class="font-label-mono text-label-mono font-bold text-on-surface">Inspection: Day T-14 (Post-Festive)</span>
+<span class="font-label-mono text-label-mono px-1 rounded bg-secondary-container text-on-secondary-container">n=384 obs</span>
+</div>
+<div class="space-y-1 font-label-mono text-label-mono pt-1">
+<div class="flex justify-between"><span class="text-on-surface-variant">Composite Basket:</span><strong class="text-on-surface">₹5,780</strong></div>
+<div class="flex justify-between"><span class="text-on-tertiary-container">Air India (AI):</span><strong>₹6,220</strong></div>
+<div class="flex justify-between"><span class="text-secondary">IndiGo (6E):</span><strong>₹5,710</strong></div>
+<div class="flex justify-between"><span class="text-secondary-fixed-dim">Akasa Air (QP):</span><strong>₹5,410</strong></div>
+<div class="flex justify-between"><span class="text-error">SpiceJet (SG):</span><strong>₹5,190</strong></div>
+</div>
+<div class="mt-2 pt-1.5 flex items-center justify-between text-on-surface-variant font-body-sm">
+<span>Volatility Spread:</span>
+<span class="font-label-mono font-bold text-on-surface">₹1,030 (18.2%)</span>
+</div>
+</div>
+<!-- X-Axis Timeline Labels -->
+<div class="flex justify-between text-on-surface-variant font-label-mono text-label-mono pt-1 px-4">
+<span>T-60d (Oct 15)</span>
+<span>T-45d (Oct 30)</span>
+<span>T-30d (Nov 14)</span>
+<span>T-15d (Nov 29)</span>
+<span>Today (Dec 14)</span>
+</div>
+</div>
+<!-- Departure Flight Bank Divergence Context -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 pt-1 font-body-sm text-body-sm">
+<div class="bg-surface-container-low p-2 rounded">
+<div class="font-label-mono text-label-mono text-on-surface font-semibold">Morning Bank (06:00 - 09:30)</div>
+<div class="text-on-surface-variant text-body-sm">Median ₹6,820 • High corporate density (+16.4% over composite)</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<div class="font-label-mono text-label-mono text-on-surface font-semibold">Midday Bank (11:00 - 16:00)</div>
+<div class="text-on-surface-variant text-body-sm">Median ₹4,940 • Leisure yield valley (-15.7% under composite)</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<div class="font-label-mono text-label-mono text-on-surface font-semibold">Evening Bank (17:30 - 21:30)</div>
+<div class="text-on-surface-variant text-body-sm">Median ₹6,540 • Peak return traffic (+11.6% over composite)</div>
+</div>
+</div>
+</div>
+<!-- CHART 2: ADVANCE PURCHASE HORIZON CURVE (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-lg p-5 shadow-sm flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Advance Purchase Curve</span>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold">T+1 to T+45 Decay</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Empirical yield decay curve illustrating dynamic airline escalation toward departure day.
+        </p>
+</div>
+<!-- Decay Curve Visualization -->
+<div class="bg-surface-container-low p-4 rounded relative">
+<div id="advance-purchase-bars-container" class="w-full h-44 flex items-end justify-between px-2 pt-4">
+<!-- T+1 Node -->
+<div class="flex flex-col items-center space-y-1 group">
+<span class="font-label-mono text-label-mono font-bold text-error">₹8,200</span>
+<span class="font-label-mono text-[9px] text-error font-semibold">+40.0%</span>
+<div class="w-8 bg-error rounded-t transition-all group-hover:opacity-90" style="height: 110px;"></div>
+<span class="font-label-mono text-label-mono font-bold text-on-surface mt-1">T+1</span>
+<span class="text-[9px] text-on-surface-variant font-label-mono">24h prior</span>
+</div>
+<!-- T+7 Node -->
+<div class="flex flex-col items-center space-y-1 group">
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹5,600</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant font-semibold">-4.4%</span>
+<div class="w-8 bg-secondary rounded-t transition-all group-hover:opacity-90" style="height: 75px;"></div>
+<span class="font-label-mono text-label-mono font-bold text-on-surface mt-1">T+7</span>
+<span class="text-[9px] text-on-surface-variant font-label-mono">1 week</span>
+</div>
+<!-- T+15 Node -->
+<div class="flex flex-col items-center space-y-1 group">
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹4,900</span>
+<span class="font-label-mono text-[9px] text-secondary font-semibold">-16.4%</span>
+<div class="w-8 bg-secondary-fixed-dim rounded-t transition-all group-hover:opacity-90" style="height: 65px;"></div>
+<span class="font-label-mono text-label-mono font-bold text-on-surface mt-1">T+15</span>
+<span class="text-[9px] text-on-surface-variant font-label-mono">2 weeks</span>
+</div>
+<!-- T+30 Node -->
+<div class="flex flex-col items-center space-y-1 group">
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹4,500</span>
+<span class="font-label-mono text-[9px] text-secondary font-semibold">-23.2%</span>
+<div class="w-8 bg-surface-variant rounded-t transition-all group-hover:opacity-90" style="height: 60px;"></div>
+<span class="font-label-mono text-label-mono font-bold text-on-surface mt-1">T+30</span>
+<span class="text-[9px] text-on-surface-variant font-label-mono">1 month</span>
+</div>
+<!-- T+45 Node -->
+<div class="flex flex-col items-center space-y-1 group">
+<span class="font-label-mono text-label-mono font-bold text-on-surface">₹4,300</span>
+<span class="font-label-mono text-[9px] text-secondary font-semibold">-26.6%</span>
+<div class="w-8 bg-surface-container-highest rounded-t transition-all group-hover:opacity-90" style="height: 57px;"></div>
+<span class="font-label-mono text-label-mono font-bold text-on-surface mt-1">T+45</span>
+<span class="text-[9px] text-on-surface-variant font-label-mono">Early Bird</span>
+</div>
+</div>
+</div>
+<!-- Carrier Horizon Cross-Section Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-label-mono text-label-mono">
+<thead class="bg-primary text-on-primary">
+<tr>
+<th class="p-2">Carrier</th>
+<th class="p-2 text-right">T+1</th>
+<th class="p-2 text-right">T+7</th>
+<th class="p-2 text-right">T+15</th>
+<th class="p-2 text-right">T+30</th>
+<th class="p-2 text-right">T+45</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant text-on-surface">
+<tr class="bg-surface-container-lowest">
+<td class="p-2 font-bold flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>IndiGo (6E)</span>
+</td>
+<td class="p-2 text-right text-error font-bold">₹8,120</td>
+<td class="p-2 text-right">₹5,480</td>
+<td class="p-2 text-right">₹4,890</td>
+<td class="p-2 text-right">₹4,450</td>
+<td class="p-2 text-right">₹4,280</td>
+</tr>
+<tr class="bg-surface-container-low">
+<td class="p-2 font-bold flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span>Air India (AI)</span>
+</td>
+<td class="p-2 text-right text-error font-bold">₹8,850</td>
+<td class="p-2 text-right">₹5,950</td>
+<td class="p-2 text-right">₹5,200</td>
+<td class="p-2 text-right">₹4,750</td>
+<td class="p-2 text-right">₹4,500</td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<td class="p-2 font-bold flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span>Akasa Air (QP)</span>
+</td>
+<td class="p-2 text-right text-error font-bold">₹7,450</td>
+<td class="p-2 text-right">₹4,890</td>
+<td class="p-2 text-right">₹4,350</td>
+<td class="p-2 text-right">₹4,100</td>
+<td class="p-2 text-right">₹3,950</td>
+</tr>
+<tr class="bg-surface-container-low">
+<td class="p-2 font-bold flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>SpiceJet (SG)</span>
+</td>
+<td class="p-2 text-right text-error font-bold">₹7,200</td>
+<td class="p-2 text-right">₹4,720</td>
+<td class="p-2 text-right">₹4,250</td>
+<td class="p-2 text-right">₹4,050</td>
+<td class="p-2 text-right">₹3,900</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Econometric Note Box -->
+<div class="bg-surface-container-low p-3 rounded">
+<div class="flex items-start space-x-2">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">menu_book</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-semibold">Methodological Protocol:</strong> Booking horizon decomposition isolates distress and surge yield pricing from baseline inventory pricing. In accordance with MoSPI CPI revision guidelines, T+7 and T+15 carry 65% aggregate weight in the synthetic core index.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: STATISTICAL DISPERSION, KERNEL DENSITY & WINSORIZATION CEILING -->
+<div class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div>
+<div class="flex items-center space-x-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Statistical Distribution &amp; Outlier Winsorization</span>
+<span class="font-label-mono text-label-mono px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">Past 30 Days (N = 11,520 observations)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Empirical Density (KDE) and Box-Percentile metrics displaying algorithmic outlier pruning for CPI basket stability.
+        </p>
+</div>
+<!-- Percentile Metric Badges -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="bg-surface-container-low px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] text-on-surface-variant uppercase">P10 (Floor)</div>
+<div class="font-label-mono text-body-md font-bold text-on-surface">₹4,100</div>
+</div>
+<div class="bg-surface-container-low px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] text-on-surface-variant uppercase">P25 (Q1)</div>
+<div class="font-label-mono text-body-md font-bold text-on-surface">₹4,800</div>
+</div>
+<div class="bg-surface-container px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] text-on-surface font-bold uppercase">Median (P50)</div>
+<div class="font-label-mono text-body-md font-bold text-on-surface">₹5,860</div>
+</div>
+<div class="bg-surface-container-low px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] text-on-surface-variant uppercase">P75 (Q3)</div>
+<div class="font-label-mono text-body-md font-bold text-on-surface">₹7,200</div>
+</div>
+<div class="bg-surface-container-low px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] text-on-surface-variant uppercase">P90 (Upper)</div>
+<div class="font-label-mono text-body-md font-bold text-on-surface">₹9,400</div>
+</div>
+<div class="bg-error-container text-on-error-container px-2.5 py-1 rounded text-center">
+<div class="font-label-mono text-[10px] uppercase font-bold">Winsor Trim</div>
+<div class="font-label-mono text-body-md font-bold">₹14,500+</div>
+</div>
+</div>
+</div>
+<!-- Density & Box Visual -->
+<div class="bg-surface-container-low p-4 rounded space-y-4">
+<!-- Continuous KDE Curve SVG -->
+<div class="relative h-28 w-full">
+<svg id="chart-density-kde" class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 100">
+  <defs>
+    <linearGradient id="kdeFill" x1="0" x2="0" y1="0" y2="1">
+      <stop class="text-secondary" offset="0%" stop-color="currentColor" stop-opacity="0.35"></stop>
+      <stop class="text-secondary" offset="100%" stop-color="currentColor" stop-opacity="0.0"></stop>
+    </linearGradient>
+  </defs>
+  <g id="kde-winsor-region"></g>
+  <path id="kde-curve-fill" fill="url(#kdeFill)" d=""></path>
+  <path id="kde-curve-stroke" class="text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" d=""></path>
+  <g id="kde-markers"></g>
+</svg>
+</div>
+<!-- Scaled Box & Whisker Track -->
+<div class="relative w-full h-8 flex items-center">
+<!-- Whisker Axis line -->
+<div class="absolute w-full h-0.5 bg-outline-variant"></div>
+<!-- Whisker Range (P10 to P90) -->
+<div class="absolute h-3 rounded bg-surface-variant flex items-center justify-between" style="left: 15%; width: 70%;">
+<div class="w-1 h-5 bg-on-surface-variant -ml-0.5"></div>
+<div class="w-1 h-5 bg-on-surface-variant -mr-0.5"></div>
+</div>
+<!-- Box (IQR: P25 to P75) -->
+<div class="absolute h-7 rounded bg-secondary-container shadow-sm flex items-center justify-center" style="left: 26%; width: 34%;">
+<!-- Median Divider -->
+<div class="w-1 h-full bg-primary absolute" style="left: 36%;"></div>
+</div>
+<!-- Outlier Dots Beyond P90 -->
+<div class="absolute w-2 h-2 rounded-full bg-error" style="left: 88%;"></div>
+<div class="absolute w-2 h-2 rounded-full bg-error" style="left: 92%;"></div>
+<div class="absolute w-2.5 h-2.5 rounded-full bg-error ring-2 ring-error-container" style="left: 96%;"></div>
+</div>
+<div class="flex justify-between font-label-mono text-label-mono text-on-surface-variant px-1">
+<span>₹2,500 (Floor Base)</span>
+<span>₹4,800 (Q1)</span>
+<span class="text-on-surface font-bold">₹5,860 (Median)</span>
+<span>₹7,200 (Q3)</span>
+<span class="text-error font-bold">₹14,500+ (Extreme Surge Trimmed)</span>
+</div>
+</div>
+</div>
+
+<!-- SECTION: INTERACTIVE ECONOMETRIC ROUTE FARE & INDEX CALCULATOR (DATASET1 ENGINE) -->
+<div id="econometric-calculator-container" class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-4 border border-surface-variant/50">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-surface-variant pb-3">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-secondary text-[22px]">calculate</span>
+        <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Econometric Route Fare &amp; Index Calculator</h3>
+        <span class="bg-secondary-container text-on-secondary-container text-label-mono font-label-mono px-2 py-0.5 rounded text-[11px] uppercase font-bold">Dataset1 Engine</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Instantaneous econometric price projection and Jevons aggregation parameterized across 452,088 verified Indian airfare observations.
+      </p>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span class="font-label-mono text-body-sm text-on-surface-variant">Empirical Baseline:</span>
+      <span class="bg-surface-container-low px-2 py-1 rounded text-on-surface font-label-mono text-body-sm font-bold border border-surface-variant">Base Jan 2023 = 100.0</span>
+    </div>
+  </div>
+
+  <!-- Calculator Controls -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 pt-1">
+    <!-- Origin -->
+    <div class="space-y-1">
+      <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Origin Hub</label>
+      <select id="calc-source" class="w-full bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+        <option value="DEL" selected>DEL — Delhi</option>
+        <option value="BOM">BOM — Mumbai</option>
+        <option value="BLR">BLR — Bangalore</option>
+        <option value="HYD">HYD — Hyderabad</option>
+        <option value="MAA">MAA — Chennai</option>
+        <option value="CCU">CCU — Kolkata</option>
+        <option value="AMD">AMD — Ahmedabad</option>
+      </select>
+    </div>
+
+    <!-- Destination -->
+    <div class="space-y-1">
+      <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Destination Hub</label>
+      <select id="calc-dest" class="w-full bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+        <option value="BOM" selected>BOM — Mumbai</option>
+        <option value="DEL">DEL — Delhi</option>
+        <option value="BLR">BLR — Bangalore</option>
+        <option value="HYD">HYD — Hyderabad</option>
+        <option value="MAA">MAA — Chennai</option>
+        <option value="CCU">CCU — Kolkata</option>
+        <option value="AMD">AMD — Ahmedabad</option>
+      </select>
+    </div>
+
+    <!-- Operating Airline -->
+    <div class="space-y-1">
+      <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Carrier</label>
+      <select id="calc-airline" class="w-full bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+        <option value="ALL" selected>All Carriers (Basket)</option>
+        <option value="Indigo">IndiGo (6E)</option>
+        <option value="Air India">Air India (AI)</option>
+        <option value="Vistara">Vistara (UK)</option>
+        <option value="SpiceJet">SpiceJet (SG)</option>
+        <option value="AirAsia">AirAsia (I5)</option>
+        <option value="GO FIRST">GO FIRST (G8)</option>
+        <option value="AkasaAir">Akasa Air (QP)</option>
+      </select>
+    </div>
+
+    <!-- Cabin Class -->
+    <div class="space-y-1">
+      <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Cabin Tier</label>
+      <select id="calc-class" class="w-full bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+        <option value="Economy" selected>Economy</option>
+        <option value="Premium Economy">Premium Economy</option>
+        <option value="Business">Business</option>
+      </select>
+    </div>
+
+    <!-- Stops -->
+    <div class="space-y-1">
+      <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Routing Stops</label>
+      <select id="calc-stops" class="w-full bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+        <option value="ALL" selected>All (Non-stop + 1-stop)</option>
+        <option value="non-stop">Non-Stop Only</option>
+        <option value="1-stop">1-Stop Routing</option>
+      </select>
+    </div>
+
+    <!-- Booking Horizon (Days Left) -->
+    <div class="space-y-1">
+      <div class="flex items-center justify-between">
+        <label class="font-label-mono text-[11px] uppercase text-on-surface-variant font-semibold">Booking Horizon</label>
+      </div>
+      <input id="calc-horizon" type="range" min="1" max="50" value="15" class="w-full accent-secondary cursor-pointer h-2 bg-surface-container rounded mt-2">
+      <div id="calc-horizon-val" class="font-label-mono text-[11px] font-bold text-secondary text-right">T+15 Days (Standard)</div>
+    </div>
+  </div>
+
+  <!-- Horizon Quick Select Buttons -->
+  <div class="flex flex-wrap items-center gap-1.5 pt-1 font-label-mono text-[11px]">
+    <span class="text-on-surface-variant mr-1">Pre-set Horizons:</span>
+    <button class="btn-horizon-quick px-2 py-0.5 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" data-day="1">T+1 (Walk-up)</button>
+    <button class="btn-horizon-quick px-2 py-0.5 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" data-day="7">T+7 (1 Week)</button>
+    <button class="btn-horizon-quick px-2 py-0.5 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" data-day="15">T+15 (2 Weeks)</button>
+    <button class="btn-horizon-quick px-2 py-0.5 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" data-day="30">T+30 (1 Month)</button>
+    <button class="btn-horizon-quick px-2 py-0.5 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" data-day="45">T+45 (Apex Discount)</button>
+  </div>
+
+  <!-- Computed Output Metric Tiles -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/40">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Dutot Mean (INR)</span>
+      <span id="calc-res-mean" class="font-metric-lg font-bold text-on-surface block mt-0.5">₹8,550</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Arithmetic Average</span>
+    </div>
+    <div class="bg-surface-container p-3 rounded border border-secondary/30">
+      <span class="font-label-mono text-[10px] text-secondary uppercase font-bold block">Median P50 (INR)</span>
+      <span id="calc-res-median" class="font-metric-lg font-bold text-secondary block mt-0.5">₹7,800</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Central Tendency</span>
+    </div>
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/40">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Jevons Aggregate (P⁻)</span>
+      <span id="calc-res-jevons" class="font-metric-lg font-bold text-on-surface block mt-0.5">₹7,450</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Geometric Unweighted</span>
+    </div>
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/40">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">IQR Band [P25 – P75]</span>
+      <span id="calc-res-iqr" class="font-metric-lg font-bold text-on-surface block mt-0.5">[₹6,200 – ₹9,400]</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Interquartile Spread</span>
+    </div>
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/40">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Yield Escalation</span>
+      <span id="calc-res-premium" class="font-metric-lg font-bold text-secondary block mt-0.5">+14% vs T+45</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">Decay Premium</span>
+    </div>
+    <div class="bg-surface-container-low p-3 rounded border border-surface-variant/40">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Surge Anomaly Risk</span>
+      <span id="calc-res-outlier" class="font-label-mono text-body-sm font-bold text-emerald-700 block mt-1">Normal Bounds</span>
+      <span id="calc-res-quotes" class="text-[10px] text-on-surface-variant font-label-mono block truncate">19,113 quotes in Dataset1</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 5: DATASET1 MICRODATA REFERENCE EXPLORER & PIPELINE TRANSFORMATION AUDIT -->
+<div id="dataset-explorer-container" class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-4 border border-surface-variant/50">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-surface-variant pb-3">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-secondary text-[22px]">database</span>
+        <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Dataset1 Microdata Reference Explorer &amp; Transformation Audit</h3>
+        <span id="explorer-total-badge" class="bg-primary text-on-primary text-label-mono font-label-mono px-2 py-0.5 rounded text-[11px] font-bold">2,512 Records</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Live search, attribute filter, and audit trace of verified microdata sampled from Dataset1/Cleaned_dataset.csv and Dataset1/Scraped_dataset.csv.
+      </p>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button id="btn-toggle-scraped-view" class="px-3 py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm flex items-center space-x-1.5 font-medium" onclick="document.getElementById('scraped-vs-cleaned-inspector').classList.toggle('hidden')">
+        <span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+        <span>Raw Scraping Pipeline Inspector</span>
+      </button>
+      <button class="px-3 py-1.5 rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-body-sm text-body-sm flex items-center space-x-1.5 font-medium" id="exportCsvBtn">
+        <span class="material-symbols-outlined text-[16px]">download</span>
+        <span>Export Filtered Microdata (CSV)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Raw vs Cleaned Inspector (toggleable) -->
+  <div id="scraped-vs-cleaned-inspector" class="bg-surface-container-low p-4 rounded border border-surface-variant space-y-3">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-secondary text-[18px]">transform</span>
+        <span class="font-headline-sm text-body-md font-bold text-on-surface">End-to-End Scraping Pipeline Telemetry: Scraped_dataset.csv → Cleaned_dataset.csv</span>
+      </div>
+      <div class="flex items-center space-x-2 font-label-mono text-body-sm">
+        <label class="text-on-surface-variant">Select Paired Example:</label>
+        <select id="scraped-pair-selector" class="bg-surface-container text-on-surface font-semibold px-2 py-1 rounded border border-surface-variant text-body-sm">
+          <option value="0">Pair 1: SpiceJet SG-8169 (DEL → BOM)</option>
+          <option value="1">Pair 2: IndiGo 6E-2519 (DEL → BOM)</option>
+          <option value="2">Pair 3: Air India AI-805 (DEL → BOM)</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-label-mono text-[12px]">
+      <div class="bg-surface-container-lowest p-3 rounded border border-surface-variant">
+        <div class="text-on-surface font-bold mb-1 text-[11px] uppercase tracking-wider text-error">Raw Scraped Record (Scraped_dataset.csv)</div>
+        <pre id="scraped-raw-content" class="text-on-surface-variant whitespace-pre-wrap font-label-mono leading-relaxed bg-surface-container-low/50 p-2 rounded"></pre>
+      </div>
+      <div class="bg-surface-container-lowest p-3 rounded border border-surface-variant">
+        <div class="text-on-surface font-bold mb-1 text-[11px] uppercase tracking-wider text-emerald-700">Normalized &amp; Validated Record (Cleaned_dataset.csv)</div>
+        <pre id="scraped-clean-content" class="text-on-surface font-label-mono whitespace-pre-wrap leading-relaxed bg-surface-container-low/50 p-2 rounded"></pre>
+      </div>
+    </div>
+    <div class="text-body-sm text-on-surface-variant">
+      <strong>Transformation Rules Applied:</strong> Multi-line airline and cabin strings parsed via Regex; Diurnal times grouped into 4 standard intervals (Before 6 AM, 6 AM - 12 PM, 12 PM - 6 PM, After 6 PM); Duration strings normalized to decimal hours; Fare strings stripped of comma formatting and validated against IEEE-754 schema. Pass rate: <strong>100.0%</strong> across 452,088 quotes.
+    </div>
+  </div>
+
+  <!-- Search & Filter Ribbon -->
+  <div class="flex flex-wrap items-center gap-3 bg-surface-container-low p-3 rounded border border-surface-variant">
+    <div class="flex-1 min-w-[200px]">
+      <div class="relative">
+        <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+        <input id="explorer-search" type="text" placeholder="Search by Flight Code (e.g. 6E-2519, AI-805), Route, Carrier, Date..." class="w-full bg-surface-container-lowest pl-9 pr-3 py-1.5 rounded font-label-mono text-body-sm border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+      </div>
+    </div>
+    <div class="flex items-center space-x-1.5 font-label-mono text-body-sm">
+      <span class="text-on-surface-variant">Carrier:</span>
+      <select id="explorer-carrier" class="bg-surface-container-lowest px-2 py-1 rounded border border-surface-variant text-on-surface font-semibold">
+        <option value="ALL">All Carriers</option>
+        <option value="Vistara">Vistara</option>
+        <option value="Air India">Air India</option>
+        <option value="Indigo">IndiGo</option>
+        <option value="SpiceJet">SpiceJet</option>
+        <option value="AirAsia">AirAsia</option>
+        <option value="GO FIRST">GO FIRST</option>
+        <option value="AkasaAir">Akasa Air</option>
+      </select>
+    </div>
+    <div class="flex items-center space-x-1.5 font-label-mono text-body-sm">
+      <span class="text-on-surface-variant">Class:</span>
+      <select id="explorer-class" class="bg-surface-container-lowest px-2 py-1 rounded border border-surface-variant text-on-surface font-semibold">
+        <option value="ALL">All Classes</option>
+        <option value="Economy">Economy</option>
+        <option value="Premium Economy">Premium Economy</option>
+        <option value="Business">Business</option>
+      </select>
+    </div>
+    <div class="flex items-center space-x-1.5 font-label-mono text-body-sm">
+      <span class="text-on-surface-variant">Stops:</span>
+      <select id="explorer-stops" class="bg-surface-container-lowest px-2 py-1 rounded border border-surface-variant text-on-surface font-semibold">
+        <option value="ALL">All Stops</option>
+        <option value="non-stop">Non-Stop</option>
+        <option value="1-stop">1-Stop</option>
+        <option value="2+-stop">2+-Stop</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Microdata Table -->
+  <div class="overflow-x-auto rounded border border-surface-variant">
+    <table class="w-full text-left font-label-mono text-label-mono">
+      <thead class="bg-primary text-on-primary">
+        <tr>
+          <th class="p-2.5">Flight No</th>
+          <th class="p-2.5">Carrier</th>
+          <th class="p-2.5">Route</th>
+          <th class="p-2.5">Journey Date</th>
+          <th class="p-2.5">Horizon</th>
+          <th class="p-2.5">Dep. Window</th>
+          <th class="p-2.5">Routing</th>
+          <th class="p-2.5">Class</th>
+          <th class="p-2.5 text-right">Fare (INR)</th>
+        </tr>
+      </thead>
+      <tbody id="explorer-table-body" class="divide-y divide-surface-variant text-on-surface">
+        <!-- Populated dynamically by app.js -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination Strip -->
+  <div class="flex flex-wrap items-center justify-between gap-2 pt-1 font-label-mono text-body-sm">
+    <span id="explorer-page-info" class="text-on-surface-variant">Showing Page 1 of 210</span>
+    <div class="flex items-center space-x-2">
+      <button id="explorer-prev-btn" class="px-3 py-1 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors font-medium">Previous</button>
+      <button id="explorer-next-btn" class="px-3 py-1 rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors font-medium">Next</button>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+  </section>
+
+  <!-- VIEW 3: DATA QUALITY, INGESTION TELEMETRY & ANOMALY SURVEILLANCE -->
+  <section id="view-quality" class="view-panel">
+    <main class="w-full pt-32 bg-background min-h-screen px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col w-full space-y-6">
+<!-- TOP BAR: CONTEXT & QUICK METRICS HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-container-lowest p-5 rounded-xl shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-wide">Protocol MoSPI-QAF-2023</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant font-medium">Node: DEL-NSO-04 / Microdata Validation Stream</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Data Quality, Ingestion Telemetry &amp; Anomaly Surveillance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time econometric ingestion integrity audit, stochastic outlier filtration, and multi-source carrier synchronization for CPI-Airfare augmentation.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center space-x-2 bg-surface-container-high hover:bg-surface-variant text-on-surface px-3 py-2 rounded font-body-md text-body-md transition-colors" id="checksum-btn" onclick="triggerAuditCheck()">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-medium">Run Checksum Audit</span>
+</button>
+<button class="flex items-center space-x-2 bg-primary hover:bg-secondary text-on-primary px-3 py-2 rounded font-body-md text-body-md transition-colors shadow-sm" onclick="downloadQualityBulletin()">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span class="font-medium">Quality Bulletin (PDF)</span>
+</button>
+</div>
+</div>
+<!-- EXECUTIVE DATA GOVERNANCE & INTEGRITY COMPONENT -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-4">
+<!-- Overall Institutional Score Card (4 Cols) -->
+<div class="xl:col-span-4 bg-primary-container text-on-primary rounded-xl p-5 shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-surface-variant/10 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-primary-container tracking-wider">MoSPI Sovereign Quality Index</span>
+<span class="px-2 py-0.5 bg-secondary text-on-secondary rounded text-label-mono font-label-mono uppercase font-semibold">Tier 1 Approved</span>
+</div>
+<div class="mt-4 flex items-baseline gap-3">
+<span class="font-metric-xl text-metric-xl font-bold tracking-tight text-on-primary">93.4</span>
+<span class="font-metric-md text-metric-md text-on-primary-container">/ 100</span>
+<span class="ml-auto px-2.5 py-1 bg-surface-container-lowest/15 text-on-primary font-label-mono text-label-mono rounded">Grade A+ Validated</span>
+</div>
+<p class="mt-3 font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+          Statistically compliant with Ministry of Statistics &amp; Programme Implementation Quality Assurance Framework for High-Frequency Big Data (<span class="text-on-primary font-semibold">MoSPI-QAF-2023</span>). Calibrated against Laspeyres-chained baseline variance tolerance of ±1.5%.
+        </p>
+</div>
+<div class="mt-6 pt-4 bg-primary-fixed-dim/10 rounded-lg p-3 space-y-2">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-primary-container">Mean Latency to Warehouse</span>
+<span class="font-label-mono font-bold text-on-primary">4.2 min</span>
+</div>
+<div class="w-full bg-surface-variant/20 rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full" style="width: 88%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-mono font-label-mono text-on-primary-container">
+<span>SLA target: ≤ 10 min</span>
+<span class="text-secondary-fixed">Efficiency: 96.8%</span>
+</div>
+</div>
+</div>
+<!-- Core Statistical Health Metrics Grid (8 Cols) -->
+<div class="xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- Metric 1: Harvest Volume & Success -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">Scrape Success</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">cloud_done</span>
+</div>
+<div class="my-2">
+<div class="font-metric-xl text-metric-xl text-on-surface">99.42%</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">452,088 of 452,088 quotes (Dataset1)</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-label-mono font-label-mono text-on-surface-variant flex items-center justify-between">
+<span>Verified: 100.0%</span>
+<span class="text-secondary font-bold">0.58%</span>
+</div>
+</div>
+<!-- Metric 2: Duplicate Ingest Isolation -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">Deduplication</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">filter_alt</span>
+</div>
+<div class="my-2">
+<div class="font-metric-xl text-metric-xl text-on-surface">587</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">0.41% Duplicate Rate</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-label-mono font-label-mono text-on-surface-variant flex items-center justify-between">
+<span>Isolation Engine</span>
+<span class="text-on-surface font-semibold">MD5 + PNR Hash</span>
+</div>
+</div>
+<!-- Metric 3: Tax/Fare Outlier Flags -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">Fare Outliers</span>
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">warning</span>
+</div>
+<div class="my-2">
+<div class="font-metric-xl text-metric-xl text-on-surface">148</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">0.10% Flagged for Review</div>
+</div>
+<div class="p-2 rounded bg-error-container text-label-mono font-label-mono text-on-error-container flex items-center justify-between">
+<span>Auto-Quarantine</span>
+<span class="font-bold">42 Excluded</span>
+</div>
+</div>
+<!-- Metric 4: Kalman/ARIMA Imputation -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">Imputed Cells</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">auto_graph</span>
+</div>
+<div class="my-2">
+<div class="font-metric-xl text-metric-xl text-on-surface">1.84%</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">2,630 sparse OD slots</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-label-mono font-label-mono text-on-surface-variant flex items-center justify-between">
+<span>Algorithmic Method</span>
+<span class="text-on-surface font-semibold">Kalman / ARIMA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- DATA PROVENANCE & INGESTION TELEMETRY TABLE -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-4 bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Source-Wise Ingestion Telemetry &amp; Coverage Grid</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Audit telemetry across verified domestic air carriers and major online travel aggregators (OTAs) within the 24-hour cycle.</p>
+</div>
+<div class="flex items-center space-x-2">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Active Polling Nodes: <strong class="text-on-surface">9 / 9 Online</strong></span>
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary font-label-mono text-label-mono uppercase">
+<th class="py-3 px-4">Carrier / Data Source</th>
+<th class="py-3 px-4">Origin Type</th>
+<th class="py-3 px-4">Sync Status</th>
+<th class="py-3 px-4">Last Harvest (IST)</th>
+<th class="py-3 px-4 text-right">24h Obs. (Quotes)</th>
+<th class="py-3 px-4 text-right">OD Route Depth</th>
+<th class="py-3 px-4 text-right">Mean Latency</th>
+<th class="py-3 px-4 text-right">Schema Pass</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-label-mono text-label-mono">
+<!-- IndiGo -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> IndiGo (6E)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Direct Airline API / NDC</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:18 (12m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">38,420</td>
+<td class="py-3 px-4 text-right text-on-surface">98.2%</td>
+<td class="py-3 px-4 text-right text-on-surface">280 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.9%</td>
+</tr>
+<!-- Air India -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Air India (AI)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Direct Amadeus GDS + Web</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:22 (8m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">28,190</td>
+<td class="py-3 px-4 text-right text-on-surface">94.1%</td>
+<td class="py-3 px-4 text-right text-on-surface">345 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.7%</td>
+</tr>
+<!-- Air India Express -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Air India Express (IX)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Direct Navitaire Scrape Node</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:12 (18m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">16,400</td>
+<td class="py-3 px-4 text-right text-on-surface">91.4%</td>
+<td class="py-3 px-4 text-right text-on-surface">390 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.6%</td>
+</tr>
+<!-- Akasa Air -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Akasa Air (QP)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Direct Web Feed Ingestion</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:26 (4m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">11,840</td>
+<td class="py-3 px-4 text-right text-on-surface">88.5%</td>
+<td class="py-3 px-4 text-right text-on-surface">310 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.8%</td>
+</tr>
+<!-- SpiceJet -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span> SpiceJet (SG)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Navitaire / Web Poller</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold text-label-mono">DEGRADED (RATE LIMIT)</span>
+</td>
+<td class="py-3 px-4 text-on-surface">13:50 (40m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">9,410</td>
+<td class="py-3 px-4 text-right text-on-surface">76.3%</td>
+<td class="py-3 px-4 text-right text-on-surface">890 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">98.1%</td>
+</tr>
+<!-- MakeMyTrip -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> MakeMyTrip (MMT)
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Aggregator Meta Cache</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:25 (5m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">22,400</td>
+<td class="py-3 px-4 text-right text-on-surface">99.1%</td>
+<td class="py-3 px-4 text-right text-on-surface">210 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.9%</td>
+</tr>
+<!-- Cleartrip -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Cleartrip
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Aggregator Meta Cache</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:10 (20m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">8,950</td>
+<td class="py-3 px-4 text-right text-on-surface">95.4%</td>
+<td class="py-3 px-4 text-right text-on-surface">265 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.4%</td>
+</tr>
+<!-- EaseMyTrip -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> EaseMyTrip
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Aggregator Meta Feed</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:15 (15m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">4,840</td>
+<td class="py-3 px-4 text-right text-on-surface">92.0%</td>
+<td class="py-3 px-4 text-right text-on-surface">310 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.5%</td>
+</tr>
+<!-- ixigo -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-4 font-bold font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> ixigo
+            </td>
+<td class="py-3 px-4 text-on-surface-variant font-body-sm">Aggregator Meta Feed</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold text-label-mono">OPERATIONAL</span>
+</td>
+<td class="py-3 px-4 text-on-surface">14:28 (2m ago)</td>
+<td class="py-3 px-4 text-right font-bold text-on-surface">2,400</td>
+<td class="py-3 px-4 text-right text-on-surface">90.2%</td>
+<td class="py-3 px-4 text-right text-on-surface">295 ms</td>
+<td class="py-3 px-4 text-right text-secondary font-bold">99.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3 bg-surface-container flex flex-wrap items-center justify-between gap-2 text-label-mono font-label-mono text-on-surface-variant">
+<span>Consolidated 24-Hour Sampling Base: <strong class="text-on-surface">142,850 fare points</strong></span>
+<span>Weighted Domestic Network Route Coverage: <strong class="text-on-surface">94.6% ASK</strong></span>
+</div>
+</div>
+<!-- VISUAL TELEMETRY: 30-DAY SUCCESS & HOURLY HEATMAP (CHARTS SECTION) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Chart A: 30-Day Scraping Success & Latency Distribution (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">30-Day Scraping Resilience &amp; Ingestion Latency</h3>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Daily Aggregation (T-30 to T-1)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Daily harvest completion rate (bars, %) mapped against average pipeline processing latency (line, ms).</p>
+</div>
+<!-- SVG Chart -->
+<div class="mt-6 w-full">
+<svg id="chart-quality-latency" class="w-full h-48 overflow-visible" preserveAspectRatio="none" viewBox="0 0 600 200">
+  <g id="quality-grid"></g>
+  <g id="quality-y-labels"></g>
+  <g id="quality-bars" class="fill-surface-container-high"></g>
+  <path id="quality-latency-line" class="text-primary" fill="none" stroke="currentColor" stroke-width="2.5" d=""></path>
+  <g id="quality-latency-points"></g>
+  <g id="quality-x-labels"></g>
+</svg>
+<div class="flex items-center justify-between text-label-mono font-label-mono text-on-surface-variant pt-2">
+<span>T-30 Days</span>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><span class="w-3 h-2 bg-surface-container-high rounded-xs"></span> Ingestion Success %</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-primary"></span> Harvest Latency (Avg 315ms)</span>
+</div>
+<span>T-0 Today (14:30 IST)</span>
+</div>
+</div>
+</div>
+<!-- Chart B: Route-by-Time Slot Missing Data Heatmap (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Route × Time Coverage Matrix</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-on-surface font-semibold">98.16% Complete</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Completeness across core domestic trunk routes by operational departure blocks.</p>
+</div>
+<!-- Compact Heatmap Grid -->
+<div class="mt-4 space-y-2">
+<div class="grid grid-cols-7 gap-1 font-label-mono text-[10px] text-on-surface-variant text-center">
+<div></div>
+<div>00-04</div>
+<div>04-08</div>
+<div>08-12</div>
+<div>12-16</div>
+<div>16-20</div>
+<div>20-24</div>
+</div>
+<!-- Row 1: DEL-BOM -->
+<div class="grid grid-cols-7 gap-1 items-center font-label-mono text-[11px]">
+<span class="text-on-surface font-semibold">DEL-BOM</span>
+<div class="h-6 rounded bg-secondary/80 flex items-center justify-center text-[10px] text-on-primary">94%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">99%</div>
+</div>
+<!-- Row 2: BLR-DEL -->
+<div class="grid grid-cols-7 gap-1 items-center font-label-mono text-[11px]">
+<span class="text-on-surface font-semibold">BLR-DEL</span>
+<div class="h-6 rounded bg-surface-variant flex items-center justify-center text-[10px] text-on-surface">82%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">98%</div>
+</div>
+<!-- Row 3: BOM-GOX -->
+<div class="grid grid-cols-7 gap-1 items-center font-label-mono text-[11px]">
+<span class="text-on-surface font-semibold">BOM-GOX</span>
+<div class="h-6 rounded bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center text-[10px] font-bold">64%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">98%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">96%</div>
+</div>
+<!-- Row 4: CCU-DEL -->
+<div class="grid grid-cols-7 gap-1 items-center font-label-mono text-[11px]">
+<span class="text-on-surface font-semibold">CCU-DEL</span>
+<div class="h-6 rounded bg-secondary/80 flex items-center justify-center text-[10px] text-on-primary">91%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">97%</div>
+</div>
+<!-- Row 5: MAA-DEL -->
+<div class="grid grid-cols-7 gap-1 items-center font-label-mono text-[11px]">
+<span class="text-on-surface font-semibold">MAA-DEL</span>
+<div class="h-6 rounded bg-surface-variant flex items-center justify-center text-[10px] text-on-surface">88%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">100%</div>
+<div class="h-6 rounded bg-secondary flex items-center justify-center text-[10px] text-on-primary">99%</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-label-mono font-label-mono text-on-surface-variant bg-surface-container-low p-2 rounded">
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded bg-tertiary-fixed"></span> Low Flight Count Slot (&lt;70%)
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded bg-secondary"></span> Optimal Ingest (≥95%)
+        </span>
+</div>
+</div>
+</div>
+<!-- REAL-TIME ANOMALY DETECTION RADAR & TIMELINE -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-5 bg-surface-container-low space-y-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-error text-[22px]">radar</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Airfare Statistical Anomalies &amp; Outlier Investigation Queue</h2>
+</div>
+<span class="font-label-mono text-label-mono bg-error-container text-on-error-container px-2.5 py-1 rounded font-bold uppercase">
+          4 Active Ingest Flags Requiring Audit Action
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Continuous algorithmic screening via Hampel X-bar filter and Bollinger Volatility Bands (±3σ). Statistical anomalies do not automatically signify ingestion failure; they isolate acute market supply squeezes, holiday clustering, or predatory web fares for econometric weighting adjustment.
+      </p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary font-label-mono text-label-mono uppercase text-[11px]">
+<th class="py-3 px-3">Event ID</th>
+<th class="py-3 px-3">Route (OD)</th>
+<th class="py-3 px-3">Carrier</th>
+<th class="py-3 px-3">Horizon</th>
+<th class="py-3 px-3 text-right">Benchmark</th>
+<th class="py-3 px-3 text-right">Observed Fare</th>
+<th class="py-3 px-3 text-right">Dev. %</th>
+<th class="py-3 px-3">Detection Formula</th>
+<th class="py-3 px-3">Anomaly Classification</th>
+<th class="py-3 px-3 text-center">Action Status</th>
+<th class="py-3 px-3 text-right">Operation</th>
+</tr>
+</thead>
+<tbody id="anomaly-table-body" class="divide-y divide-surface-variant font-label-mono text-[12px]">
+<!-- Anomaly Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-3 font-bold text-on-surface">ANOM-8821</td>
+<td class="py-3.5 px-3 font-semibold text-on-surface">DEL → BOM</td>
+<td class="py-3.5 px-3 text-on-surface">Air India</td>
+<td class="py-3.5 px-3 text-on-surface-variant">T+1 (Tomorrow)</td>
+<td class="py-3.5 px-3 text-right text-on-surface-variant">₹5,200</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">₹14,800</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">+184.6%</td>
+<td class="py-3.5 px-3 text-on-surface-variant">3.5-Sigma Peak Filter</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium text-[11px]">Fleet Sub / Disruption Spike</span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold text-[10px] uppercase">Approved (Weight Cap)</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<button class="text-secondary hover:text-primary font-bold text-body-sm underline" onclick="toggleModal('ANOM-8821')">Audit Trace</button>
+</td>
+</tr>
+<!-- Anomaly Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/30">
+<td class="py-3.5 px-3 font-bold text-on-surface">ANOM-8819</td>
+<td class="py-3.5 px-3 font-semibold text-on-surface">CCU → DEL</td>
+<td class="py-3.5 px-3 text-on-surface">SpiceJet</td>
+<td class="py-3.5 px-3 text-on-surface-variant">T+15</td>
+<td class="py-3.5 px-3 text-right text-on-surface-variant">₹4,900</td>
+<td class="py-3.5 px-3 text-right font-bold text-on-tertiary-container">₹1,450</td>
+<td class="py-3.5 px-3 text-right font-bold text-on-tertiary-container">-70.4%</td>
+<td class="py-3.5 px-3 text-on-surface-variant">Tukey IQR Floor</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-medium text-[11px]">Misparsed Promo Base Fare</span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-bold text-[10px] uppercase">Excluded from Index</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<button class="text-secondary hover:text-primary font-bold text-body-sm underline" onclick="toggleModal('ANOM-8819')">Audit Trace</button>
+</td>
+</tr>
+<!-- Anomaly Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-3 font-bold text-on-surface">ANOM-8814</td>
+<td class="py-3.5 px-3 font-semibold text-on-surface">BLR → DEL</td>
+<td class="py-3.5 px-3 text-on-surface">IndiGo</td>
+<td class="py-3.5 px-3 text-on-surface-variant">T+3</td>
+<td class="py-3.5 px-3 text-right text-on-surface-variant">₹6,100</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">₹11,200</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">+83.6%</td>
+<td class="py-3.5 px-3 text-on-surface-variant">Hampel Rolling Median</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium text-[11px]">High Business Demand Bank</span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[10px] uppercase">Under Manual Review</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<button class="text-secondary hover:text-primary font-bold text-body-sm underline" onclick="toggleModal('ANOM-8814')">Audit Trace</button>
+</td>
+</tr>
+<!-- Anomaly Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/30">
+<td class="py-3.5 px-3 font-bold text-on-surface">ANOM-8802</td>
+<td class="py-3.5 px-3 font-semibold text-on-surface">BOM → GOX</td>
+<td class="py-3.5 px-3 text-on-surface">Akasa Air</td>
+<td class="py-3.5 px-3 text-on-surface-variant">T+7</td>
+<td class="py-3.5 px-3 text-right text-on-surface-variant">₹4,400</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">₹9,950</td>
+<td class="py-3.5 px-3 text-right font-bold text-error">+126.1%</td>
+<td class="py-3.5 px-3 text-on-surface-variant">Seasonal Outlier Model</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium text-[11px]">Weekend Festival Cluster</span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold text-[10px] uppercase">Validated Surge</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<button class="text-secondary hover:text-primary font-bold text-body-sm underline" onclick="toggleModal('ANOM-8802')">Audit Trace</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Econometric Safety Lock Active: Index calculation automatically clips extreme tail outliers outside 4.0σ unless manual clearance is logged by DGCA/MoSPI statistical officer.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-surface-container-lowest hover:bg-surface-variant text-on-surface text-label-mono font-label-mono uppercase transition-colors shadow-xs" onclick="exportAnomalyLog('json')">JSON Feed</button>
+<button class="px-3 py-1 rounded bg-surface-container-lowest hover:bg-surface-variant text-on-surface text-label-mono font-label-mono uppercase transition-colors shadow-xs" onclick="exportAnomalyLog('csv')">CSV Extract</button>
+</div>
+</div>
+</div>
+<!-- MATHEMATICAL & GOVERNANCE COMPLIANCE FOOTER CARD -->
+<div class="bg-surface-container p-5 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono uppercase font-bold text-on-surface">Data Quarantine Policy (MoSPI Statistical Bulletin 12/2023)</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container text-label-mono font-label-mono">Standardized</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Observations isolated by the automated screening process are permanently preserved in the secondary audit tier to guarantee retrospective replicability. No records are deleted; microdata weights are set to $w_i = 0$ for excluded fare spikes while preserving carrier capacity shares.
+      </p>
+</div>
+<div class="flex items-center space-x-2 shrink-0 font-label-mono text-label-mono text-on-surface-variant">
+<span>Warehouse Node: <strong class="text-on-surface">AWS-DEL-GOV-01</strong></span>
+</div>
+</div>
+<!-- INTERACTIVE AUDIT TRACE MODAL (HIDDEN BY DEFAULT) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-xs hidden flex items-center justify-center p-4" id="audit-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-xl w-full p-6 shadow-xl space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">manage_search</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Algorithmic Anomaly Trace</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="toggleModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-3 bg-surface-container-low p-4 rounded-lg font-label-mono text-label-mono">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Event Identifier:</span>
+<span class="font-bold text-on-surface" id="modal-event-id">ANOM-8821</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Primary Screening Algorithm:</span>
+<span class="text-on-surface">Hampel Rolling Median Filter (k=3)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Baseline Standard Error (σ):</span>
+<span class="text-on-surface">₹1,180.40</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Recorded Variance Z-Score:</span>
+<span class="text-error font-bold">+3.72 σ</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Carrier Booking Engine Payload:</span>
+<span class="text-on-surface">HTTP 200 (Verified TLS 1.3)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        The record passed cryptographic payload verification and XML syntax validation. The fare deviation was triggered by sudden equipment gauge change from A321 to A320, eliminating 32 Economy seats. Weight has been adjusted downwards to 0.25 to prevent skewing the National Laspeyres Index.
+      </p>
+<div class="flex justify-end gap-3 pt-2">
+<button class="px-4 py-2 bg-surface-container hover:bg-surface-variant text-on-surface font-body-md text-body-md rounded transition-colors" onclick="toggleModal()">Close Audit View</button>
+<button class="px-4 py-2 bg-primary hover:bg-secondary text-on-primary font-body-md text-body-md rounded transition-colors" onclick="alert('Audit verification signed by Sovereign Node Key DEL-NSO-04.')">Sign Verification</button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE SCRIPTS -->
+<script>
+  function toggleModal(eventId) {
+    const modal = document.getElementById('audit-modal');
+    if (eventId) {
+      document.getElementById('modal-event-id').innerText = eventId;
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function triggerAuditCheck() {
+    const btn = document.getElementById('checksum-btn');
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Computing SHA-256...</span>';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span><span>Checksum Validated (0x9AF4)</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+      }, 3000);
+    }, 1200);
+  }
+
+  function downloadQualityBulletin() {
+    alert("National Quality Assurance Bulletin (PDF) generated under reference MoSPI/APIx/QAF-2023-W48. Download initiated.");
+  }
+
+  function exportAnomalyLog(format) {
+    alert("Exporting Airfare Anomaly Audit Log in " + format.toUpperCase() + " format with full cryptographic timestamp hashes.");
+  }
+</script>
+    </main>
+  </section>
+
+  <!-- VIEW 4: METHODOLOGY, FORMULAE & CPI AUGMENTATION -->
+  <section id="view-methodology" class="view-panel">
+    <main class="w-full pt-32 bg-background min-h-screen px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col w-full pb-16">
+<!-- Sovereign Breadcrumb & Header Metadata Strip -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4">
+<div class="flex flex-wrap items-center gap-2 text-on-surface-variant">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-secondary">MET-REF-2024/REV-03</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider">NSO DIVISION OF MACROECONOMIC PRICING</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="bg-secondary-container text-on-secondary-container font-label-mono text-label-mono px-2 py-0.5 rounded uppercase font-semibold">Laspeyres Core v2.4</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 font-label-mono text-label-mono text-on-surface-variant bg-surface-container-low px-3 py-1 rounded">
+<span class="material-symbols-outlined text-secondary" style="font-size: 15px;">verified</span>
+<span>Base Period: Jan 2023 = 100.0</span>
+</span>
+<span class="flex items-center gap-1.5 font-label-mono text-label-mono text-on-surface-variant bg-surface-container-low px-3 py-1 rounded">
+<span class="material-symbols-outlined text-secondary" style="font-size: 15px;">tune</span>
+<span>Filter: Tukey 1.5×IQR</span>
+</span>
+</div>
+</div>
+<!-- Hero Header & High-Level Architectural Abstract -->
+<div class="relative bg-surface-container-lowest p-6 rounded-lg shadow-sm mb-6 overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-96 bg-gradient-to-l from-surface-container-high/40 via-surface-container/20 to-transparent pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-secondary font-bold">ECONOMETRIC COMPILATION BLUEPRINT</span>
+<span class="bg-surface-container-highest text-on-surface font-label-mono text-label-mono px-2 py-0.5 rounded font-medium">COICOP Code 07.3.3 / Item 5.3.01</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+        Laspeyres-Fisher Algorithmic Index Mathematics &amp; CPI Augmentation
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Standard operating specifications for transforming multi-horizon synthetic web-scraped inventory observations into a continuous, quality-adjusted Laspeyres price sub-index. Developed to accelerate Ministry price signal telemetry ahead of official monthly rural-urban transport schedules.
+      </p>
+</div>
+</div>
+<!-- SECTION 1: MATHEMATICAL FORMULATION -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<!-- Main Formula Canvas -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 border-b border-surface-variant/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">functions</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Equation 1.1: Aggregated Laspeyres Sub-Index</span>
+</div>
+<span class="font-label-mono text-label-mono bg-surface-container text-on-surface px-2.5 py-1 rounded">Daily Timestamped Aggregation</span>
+</div>
+<!-- Formula Display Box -->
+<div class="bg-surface-container-low p-6 rounded-md shadow-inner flex flex-col items-center justify-center gap-4 relative overflow-hidden">
+<div class="absolute top-2 left-3 font-label-mono text-label-mono text-on-surface-variant">FORMULATION (MoSPI-NSO/L-23)</div>
+<div class="text-center font-metric-xl text-metric-xl text-on-surface py-4 tracking-wide select-all">
+            APIx<sub class="text-sm font-label-mono">t</sub> = 
+            <span class="inline-flex items-center align-middle mx-2 text-2xl font-normal">[</span>
+<div class="inline-flex flex-col text-center align-middle mx-1">
+<span class="border-b border-on-surface/70 pb-1 font-metric-lg text-metric-lg px-2">
+                ∑<sub class="text-xs font-label-mono">i=1</sub><sup class="text-xs font-label-mono">N</sup> w<sub class="text-xs font-label-mono">i</sub> ⋅ P<sub class="text-xs font-label-mono">i,t</sub>
+</span>
+<span class="pt-1 font-metric-lg text-metric-lg px-2">
+                ∑<sub class="text-xs font-label-mono">i=1</sub><sup class="text-xs font-label-mono">N</sup> w<sub class="text-xs font-label-mono">i</sub> ⋅ P<sub class="text-xs font-label-mono">i,0</sub>
+</span>
+</div>
+<span class="inline-flex items-center align-middle mx-2 text-2xl font-normal">]</span>
+            × 100
+          </div>
+<div class="flex flex-wrap justify-center items-center gap-4 text-center font-label-mono text-label-mono text-on-surface-variant bg-surface-container-lowest/80 px-4 py-1.5 rounded">
+<span>N = 48 Monitored Route Pairs</span>
+<span>•</span>
+<span>Period Base: T<sub class="text-xs">0</sub> = Jan 1 - Jan 31, 2023</span>
+<span>•</span>
+<span>∑ w<sub class="text-xs">i</sub> = 1.0000</span>
+</div>
+</div>
+<!-- Parameter Decomposition Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+<div class="bg-surface-container-low p-3.5 rounded-md flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-code-formula text-code-formula font-bold text-secondary">P<sub class="text-xs">i,t</sub></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">Period t Fare</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Representative baseline economy seat airfare on city-pair <span class="font-label-mono">i</span> at observation date <span class="font-label-mono">t</span>. Calculated as a micro-geometric mean across carrier schedules &amp; stratified advance ticketing horizons.
+            </p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-md flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-code-formula text-code-formula font-bold text-secondary">P<sub class="text-xs">i,0</sub></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">Reference Base</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Fixed benchmark price level captured during the Jan 2023 audit baseline. Frozen across rolling reporting periods to guarantee true Laspeyres volume-weighted fixed-basket price path continuity.
+            </p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-md flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-code-formula text-code-formula font-bold text-secondary">w<sub class="text-xs">i</sub></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">ASK Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Static Available Seat-Kilometers (ASK) weight ratio derived from Directorate General of Civil Aviation (DGCA) annual air traffic operational returns, scaled to sum exactly to unit parity across the basket.
+            </p>
+</div>
+</div>
+</div>
+<!-- Advance Purchase Horizon Formula Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">event_upcoming</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Equation 1.2: Advance Purchase Horizon Stratification</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant">5-Tier Departure Horizon Model</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-md flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="font-metric-lg text-metric-lg text-on-surface font-code-formula">
+            P<sub class="text-xs">i,t</sub> = 
+            ∑<sub class="text-xs font-label-mono">h ∈ H</sub> 
+            λ<sub class="text-xs font-label-mono">h</sub> ⋅ 
+            p̄<sub class="text-xs font-label-mono">i,t,h</sub>
+</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant">
+            where H = { T+1, T+7, T+15, T+30, T+45 }
+          </div>
+</div>
+<!-- Density Allocation Bars -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex justify-between items-center text-label-mono font-label-mono text-on-surface-variant">
+<span>EMPIRICAL HORIZON DENSITY WEIGHT DISTRIBUTION (λ<sub class="text-xs">h</sub>)</span>
+<span>∑ λ<sub class="text-xs">h</sub> = 1.000</span>
+</div>
+<div class="grid grid-cols-5 gap-2">
+<div class="bg-surface-container-low p-2.5 rounded flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary font-bold">T+1</span>
+<span class="font-code-formula text-code-formula font-semibold text-on-surface">14.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 14%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Emergency / Walk-up</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary font-bold">T+7</span>
+<span class="font-code-formula text-code-formula font-semibold text-on-surface">32.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 32%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Short-lead business</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary font-bold">T+15</span>
+<span class="font-code-formula text-code-formula font-semibold text-on-surface">26.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 26%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Intermediate plan</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary font-bold">T+30</span>
+<span class="font-code-formula text-code-formula font-semibold text-on-surface">18.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 18%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Advanced personal</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-secondary font-bold">T+45</span>
+<span class="font-code-formula text-code-formula font-semibold text-on-surface">10.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 10%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Early discount apex</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Trimming, Winsorization & Data Quality Parameters -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm flex flex-col gap-4 h-full">
+<div class="flex items-center gap-2 pb-2 border-b border-surface-variant/60">
+<span class="material-symbols-outlined text-secondary">filter_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Trimming &amp; Outlier Protocol</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-low p-3 rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface font-semibold">Tukey 1.5 × IQR Fence</span>
+<span class="font-label-mono text-label-mono text-secondary bg-surface-container px-1.5 py-0.5 rounded">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Fares falling outside [Q1 − 1.5×IQR, Q3 + 1.5×IQR] per route-horizon cluster are isolated for automated audit verification.
+            </p>
+</div>
+<div class="bg-surface-container-low p-3 rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface font-semibold">Double Asymmetric Winsorization</span>
+<span class="font-code-formula text-code-formula text-secondary font-bold">p ∈ [1%, 97.5%]</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Bottom 1.0% (promotional error fares, unbundled fare bugs) and top 2.5% (last-seat flex extortion, algorithmic spikes) are capped at percentiles to avoid Laspeyres upward skew.
+            </p>
+</div>
+<div class="bg-surface-container-low p-3 rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-mono text-label-mono text-on-surface font-semibold">Jevons Micro-aggregation</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Tier 0 Node</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Prior to weighting by ASK, all contemporaneous intraday flight observations within carrier c and day horizon h are aggregated using unweighted geometric mean:
+            </p>
+<div class="font-code-formula text-code-formula text-on-surface mt-2 bg-surface-container-lowest p-2 rounded text-center">
+              p̄ = (∏ p<sub class="text-xs">k</sub>)<sup class="text-xs">1/M</sup>
+</div>
+</div>
+</div>
+<div class="mt-auto bg-surface-container-high/60 p-3 rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono uppercase text-on-surface font-bold">ILO / UN Manual Compliant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Method aligns with Consumer Price Index Manual: Theory and Practice (ILO/IMF 2020 §6.42).</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: CPI AUGMENTATION PIPELINE (STEPPER) -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm mb-8 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-surface-variant/60 pb-3">
+<div>
+<span class="font-label-mono text-label-mono uppercase text-secondary font-bold">INTEGRATION ARCHITECTURE</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+          Integrating High-Frequency Airfare Signals into Official CPI Compilation
+        </h2>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded">
+        Target Sub-Group: 5.3.01 (Air Transport)
+      </span>
+</div>
+<!-- Stepper Pipeline -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-mono text-label-mono font-bold">1</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">INGEST</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Raw Microdata Pull</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Over ~140,000 synthetic real-time quote iterations ingested daily covering all scheduled flight combinations across 6 domestic GDS and carrier APIs.
+          </p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-variant/40 flex justify-between items-center text-label-mono font-label-mono text-on-surface-variant">
+<span>Throughput</span>
+<span class="font-bold text-on-surface">140k/day</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-mono text-label-mono font-bold">2</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">TREAT</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cleaned &amp; Stratified APIx</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Application of Tukey fences, asymmetric tail clipping, and horizon-weighting matrix (λ<sub class="text-xs">h</sub>) to generate daily clean route indexes.
+          </p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-variant/40 flex justify-between items-center text-label-mono font-label-mono text-on-surface-variant">
+<span>Rejection Rate</span>
+<span class="font-bold text-on-surface">3.4% Outliers</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-mono text-label-mono font-bold">3</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">AGGREGATE</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Monthly Rollup (APIx-M)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Integration of 28-31 daily index points using calendar arithmetic aggregation to synthesize the official monthly proxy airfare metric.
+          </p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-variant/40 flex justify-between items-center text-label-mono font-label-mono text-on-surface-variant">
+<span>Aggregation</span>
+<span class="font-bold text-on-surface">Calendar Mean</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-mono text-label-mono font-bold">4</span>
+<span class="font-label-mono text-label-mono text-secondary font-bold">AUGMENT</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">CPI Transport 5.3.01</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Direct feed into Item Code 5.3.01 of the Transport &amp; Communication group, reducing traditional survey lag from 18 days to real-time estimate.
+          </p>
+</div>
+<div class="mt-auto pt-2 border-t border-surface-variant/40 flex justify-between items-center text-label-mono font-label-mono text-on-surface-variant">
+<span>Signal Lead</span>
+<span class="font-bold text-secondary">+16.4 Days</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SECTION: OFFICIAL MOSPI CPI (ITEM 07.3.3.1) BENCHMARK EXPLORER -->
+<div id="section-cpi-augmentation"></div>
+<div id="mospi-cpi-explorer" class="bg-surface-container-lowest rounded-lg p-5 shadow-sm space-y-5 border border-surface-variant/60 my-6">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-surface-variant pb-3">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
+        <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Official MoSPI CPI Time Series Explorer (Item 07.3.3.1)</h3>
+        <span class="bg-primary text-on-primary text-label-mono font-label-mono px-2 py-0.5 rounded text-[11px] uppercase font-bold">Recent Dataset (cpi_640.xlsx)</span>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Empirical National Statistical Office (NSO) Consumer Price Index series for <strong>Passenger Transport by Air, Domestic (Item 07.3.3.1)</strong> covering January 2025 – August 2026 across 34 States &amp; UTs.
+      </p>
+    </div>
+    
+    <!-- State & Sector Controls -->
+    <div class="flex flex-wrap items-center gap-3">
+      <div class="flex items-center space-x-1.5 font-label-mono text-body-sm">
+        <label class="text-on-surface-variant font-semibold">State / Region:</label>
+        <select id="cpi-state-select" class="bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+          <option value="All India" selected>All India (National)</option>
+        </select>
+      </div>
+
+      <div class="flex items-center space-x-1.5 font-label-mono text-body-sm">
+        <label class="text-on-surface-variant font-semibold">Sector:</label>
+        <select id="cpi-sector-select" class="bg-surface-container-low text-on-surface font-label-mono text-body-sm font-bold px-2.5 py-1.5 rounded border border-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary">
+          <option value="Combined" selected>Combined (Rural + Urban)</option>
+          <option value="Urban">Urban</option>
+          <option value="Rural">Rural</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Headline Metrics Strip -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+    <div class="bg-surface-container-low p-3.5 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">August 2026 CPI Index</span>
+      <span id="cpi-stat-aug-index" class="font-metric-xl font-bold text-primary block mt-0.5">135.49</span>
+      <span id="cpi-stat-aug-ref" class="text-[10px] text-on-surface-variant font-label-mono">Base 2024 = 100.0</span>
+    </div>
+
+    <div class="bg-surface-container-low p-3.5 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">YoY Airfare Inflation</span>
+      <span id="cpi-stat-aug-inflation" class="font-metric-xl font-bold text-emerald-700 block mt-0.5">+20.85%</span>
+      <span class="text-[10px] text-on-surface-variant font-label-mono">vs August 2025</span>
+    </div>
+
+    <div class="bg-surface-container-low p-3.5 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">Rural vs Urban Divergence</span>
+      <span id="cpi-stat-divergence" class="font-metric-lg font-bold text-on-surface block mt-1">148.16 vs 127.20</span>
+      <span id="cpi-stat-divergence-sub" class="text-[10px] text-on-surface-variant font-label-mono">+20.96 pts Rural Premium</span>
+    </div>
+
+    <div class="bg-surface-container-low p-3.5 rounded border border-surface-variant/50">
+      <span class="font-label-mono text-[10px] text-on-surface-variant uppercase block">APIx High-Frequency Lead</span>
+      <span class="font-metric-xl font-bold text-secondary block mt-0.5">+17.6 Days</span>
+      <span class="text-[10px] text-secondary font-label-mono font-medium">Predictive Gazette Advantage</span>
+    </div>
+  </div>
+
+  <!-- Monthly Trajectory Grid -->
+  <div class="space-y-2">
+    <div class="flex items-center justify-between">
+      <span class="font-label-mono text-[11px] font-bold text-on-surface uppercase tracking-wider">
+        Monthly Index Trajectory (2025 – 2026) • <span id="cpi-table-caption">All India • Combined</span>
+      </span>
+      <span class="font-label-mono text-[11px] text-on-surface-variant">Source: MoSPI Item Code 07.3.3.1</span>
+    </div>
+
+    <div class="overflow-x-auto rounded border border-surface-variant">
+      <table class="w-full text-left font-label-mono text-label-mono">
+        <thead class="bg-surface-container text-on-surface">
+          <tr>
+            <th class="p-2.5">Year</th>
+            <th class="p-2.5">Month</th>
+            <th class="p-2.5">Sector</th>
+            <th class="p-2.5 text-right">Official Index</th>
+            <th class="p-2.5 text-right">YoY Inflation (%)</th>
+            <th class="p-2.5 text-right">APIx Synthetic Match</th>
+            <th class="p-2.5 text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody id="cpi-monthly-tbody" class="divide-y divide-surface-variant text-on-surface bg-surface-container-lowest">
+          <!-- Dynamically populated by app.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: ECONOMETRIC VALIDATION & TIME-SERIES COMPARISON -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+<!-- Chart Container -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-surface-variant/60 pb-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">stacked_line_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              12-Month Econometric Correlation &amp; Trajectory Match
+            </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Comparison: Synthetic APIx-M Aggregation vs Official CPI Transport Sub-Index vs All-India General CPI (Rescaled 2023-24)
+          </p>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-3 font-label-mono text-label-mono">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-on-surface inline-block"></span>
+<span>APIx-M</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-secondary inline-block"></span>
+<span>CPI Trans (5.3)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-outline inline-block stroke-dasharray"></span>
+<span>Headline CPI</span>
+</div>
+</div>
+</div>
+<!-- SVG Chart Component -->
+<div class="relative w-full h-72 bg-surface-container-low/40 rounded-md p-4 flex flex-col justify-between">
+<!-- Axes markers -->
+<div class="absolute inset-x-8 inset-y-6 flex flex-col justify-between pointer-events-none text-label-mono text-on-surface-variant/60">
+<div class="flex justify-between border-b border-surface-variant/40 pb-0.5"><span>130.0</span><span class="text-xs">Diwali/Holiday Peak</span></div>
+<div class="flex justify-between border-b border-surface-variant/40 pb-0.5"><span>120.0</span><span></span></div>
+<div class="flex justify-between border-b border-surface-variant/40 pb-0.5"><span>110.0</span><span></span></div>
+<div class="flex justify-between border-b border-surface-variant/40 pb-0.5"><span>100.0</span><span class="text-xs">Baseline Norm</span></div>
+<div class="flex justify-between border-b border-surface-variant/40 pb-0.5"><span>90.0</span><span></span></div>
+</div>
+<!-- Inline SVG Rendering Paths -->
+<svg id="chart-cpi-cointegration" class="w-full h-full relative z-10 overflow-visible" preserveAspectRatio="none" viewBox="0 0 700 220">
+  <defs>
+    <linearGradient id="apixFill" x1="0" x2="0" y1="0" y2="1">
+      <stop class="text-on-surface" offset="0%" stop-color="currentColor" stop-opacity="0.12"></stop>
+      <stop class="text-on-surface" offset="100%" stop-color="currentColor" stop-opacity="0.0"></stop>
+    </linearGradient>
+  </defs>
+  <g id="cpi-grid"></g>
+  <g id="cpi-y-labels"></g>
+  <polygon id="cpi-apix-polygon" fill="url(#apixFill)" points=""></polygon>
+  <polyline id="cpi-headline-line" class="text-outline" fill="none" stroke="currentColor" stroke-dasharray="4,4" stroke-width="1.8" points=""></polyline>
+  <polyline id="cpi-official-line" class="text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" points=""></polyline>
+  <polyline id="cpi-apix-line" class="text-on-surface" fill="none" stroke="currentColor" stroke-width="2.8" points=""></polyline>
+  <g id="cpi-nodes"></g>
+  <g id="cpi-x-labels"></g>
+  <rect id="cpi-hit-overlay" width="700" height="220" fill="transparent" style="cursor: crosshair;"></rect>
+</svg>
+<!-- X-axis Labels -->
+<div class="flex justify-between font-label-mono text-label-mono text-on-surface-variant pt-2 border-t border-surface-variant">
+<span>May '23</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Aug</span>
+<span>Sep</span>
+<span>Oct</span>
+<span>Nov</span>
+<span>Dec</span>
+<span>Jan '24</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr '24</span>
+</div>
+</div>
+<!-- Econometric Note on Leading Signal -->
+<div class="bg-surface-container-low p-3.5 rounded flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5">insights</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Leading Indicator Telemetry Window</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Cross-spectral frequency analysis proves APIx-M identifies price inflection vertices <strong class="text-on-surface font-semibold">15.8 to 19.4 days prior</strong> to NSO field enumeration collection release, offering decisive advance input for macro-prudential inflation expectations.
+          </p>
+</div>
+</div>
+</div>
+<!-- Econometric Test Statistics Card -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm flex flex-col justify-between h-full">
+<div>
+<div class="flex items-center gap-2 pb-3 border-b border-surface-variant/60">
+<span class="material-symbols-outlined text-secondary">query_stats</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Empirical Co-integration</span>
+</div>
+<div class="flex flex-col gap-3.5 mt-4">
+<!-- Metric 1: Pearson r -->
+<div class="flex items-center justify-between p-3 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Pearson Correlation (r)</span>
+<span class="font-body-sm text-body-sm text-on-surface">APIx vs Transport Sub-group</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-lg text-metric-lg font-bold text-on-surface">0.884</span>
+<span class="font-label-mono text-label-mono text-secondary">p &lt; 0.0001 (Sig.)</span>
+</div>
+</div>
+<!-- Metric 2: Granger Causality -->
+<div class="flex items-center justify-between p-3 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Granger Causality (F-Test)</span>
+<span class="font-body-sm text-body-sm text-on-surface">APIx → CPI Airfare (Lag 1)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-lg text-metric-lg font-bold text-on-surface">F = 18.42</span>
+<span class="font-label-mono text-label-mono text-secondary">p = 0.0028</span>
+</div>
+</div>
+<!-- Metric 3: Root Mean Squared Deviation -->
+<div class="flex items-center justify-between p-3 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Mean Absolute Pct Error</span>
+<span class="font-body-sm text-body-sm text-on-surface">MAPE against DGCA Survey</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-lg text-metric-lg font-bold text-on-surface">2.14%</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">±0.4% Band</span>
+</div>
+</div>
+<!-- Metric 4: Sample Observation Volume -->
+<div class="flex items-center justify-between p-3 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-on-surface-variant">Annual Sample Ingestion</span>
+<span class="font-body-sm text-body-sm text-on-surface">Valid Microdata Fares</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-metric-lg text-metric-lg font-bold text-on-surface">51.2M</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">Synthesized</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-surface-variant/60 flex flex-col gap-1.5">
+<span class="font-label-mono text-label-mono text-on-surface font-semibold">TEST BENCH STATUS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Augmentation hypothesis verified: Synthetic APIx-M tracks actual seasonal inflection with negligible tracking lag.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: BASKET COMPOSITION & SAMPLING METHODOLOGY -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm mb-8 flex flex-col gap-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-surface-variant/60 pb-3">
+<div>
+<span class="font-label-mono text-label-mono uppercase text-secondary font-bold">ROUTE STRATIFICATION</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+          48-Route Representative Basket &amp; Capacity Weights
+        </h2>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-on-surface-variant">
+<span>Source: DGCA City-Pair Traffic Statistics (2023)</span>
+</div>
+</div>
+<!-- Table of Route Categories -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-primary text-on-primary font-label-mono text-label-mono uppercase">
+<th class="py-2.5 px-4 rounded-l">Cluster Stratum</th>
+<th class="py-2.5 px-4">Monitored Pairs</th>
+<th class="py-2.5 px-4">Representative Routes</th>
+<th class="py-2.5 px-4 text-right">ASK Weight (w<sub class="text-xs">c</sub>)</th>
+<th class="py-2.5 px-4 text-right">Carrier Density</th>
+<th class="py-2.5 px-4 rounded-r text-right">Sampling Cadence</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant/40">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Tier-1 Metro Hubs
+            </td>
+<td class="py-3 px-4 font-code-formula">22 Pairs</td>
+<td class="py-3 px-4 font-label-mono text-on-surface-variant">DEL-BOM, BOM-BLR, DEL-CCU, BLR-DEL, HYD-DEL, MAA-BOM</td>
+<td class="py-3 px-4 text-right font-code-formula font-bold text-on-surface">58.40%</td>
+<td class="py-3 px-4 text-right font-code-formula">4-6 Carriers</td>
+<td class="py-3 px-4 text-right font-label-mono">Every 4 Hours</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-secondary-fixed-variant"></span>
+              Metro to Tier-2 Growth
+            </td>
+<td class="py-3 px-4 font-code-formula">18 Pairs</td>
+<td class="py-3 px-4 font-label-mono text-on-surface-variant">DEL-PAT, BOM-VNS, BLR-COK, DEL-LKO, BOM-IXC, CCU-GAU</td>
+<td class="py-3 px-4 text-right font-code-formula font-bold text-on-surface">29.20%</td>
+<td class="py-3 px-4 text-right font-code-formula">2-4 Carriers</td>
+<td class="py-3 px-4 text-right font-label-mono">Every 6 Hours</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+              Regional &amp; RCS-UDAN
+            </td>
+<td class="py-3 px-4 font-code-formula">8 Pairs</td>
+<td class="py-3 px-4 font-label-mono text-on-surface-variant">DEL-DHM, BOM-KNU, CCU-IXZ, BLR-IXG, GAU-TEZ</td>
+<td class="py-3 px-4 text-right font-code-formula font-bold text-on-surface">12.40%</td>
+<td class="py-3 px-4 text-right font-code-formula">1-2 Carriers</td>
+<td class="py-3 px-4 text-right font-label-mono">Daily at 02:00</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container-low font-label-mono text-label-mono font-bold text-on-surface">
+<td class="py-2.5 px-4" colspan="3">AGGREGATE FORMAL BASKET COVERAGE</td>
+<td class="py-2.5 px-4 text-right font-code-formula">100.00%</td>
+<td class="py-2.5 px-4 text-right">94.6% ASK Coverage</td>
+<td class="py-2.5 px-4 text-right">Continuous Sync</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- SECTION 5: INSTITUTIONAL NOTICE & ARTIFACT REPOSITORIES -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-6">
+<!-- Formal Disclaimer Box -->
+<div class="bg-surface-container-low p-5 rounded-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-secondary text-3xl shrink-0">gavel</span>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Notice of Methodological &amp; Experimental Research Status
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-4xl">
+            The Airfare Price Index (APIx) is an experimental statistical research framework developed by the High-Frequency Alternative Data Working Group under the technical purview of the National Statistical Office (NSO), MoSPI. All formulations, econometric time-series projections, and index curves presented are simulated models evaluated on synthetic test feeds. This indicator does not supersede official Gazette publications of the All-India Consumer Price Index.
+          </p>
+</div>
+</div>
+<div class="shrink-0">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-mono text-body-sm px-3 py-1.5 rounded uppercase font-bold tracking-tight inline-block text-center">
+          NSO RESEARCH EVALUATION
+        </span>
+</div>
+</div>
+<!-- Action & Download Buttons -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-2 bg-primary hover:bg-secondary text-on-primary px-4 py-2 rounded text-body-md font-medium transition-colors shadow-sm cursor-pointer">
+<span class="material-symbols-outlined" style="font-size: 18px;">description</span>
+<span>Download Methodology Whitepaper (PDF, 4.2 MB)</span>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface px-4 py-2 rounded text-body-md font-medium transition-colors cursor-pointer">
+<span class="material-symbols-outlined" style="font-size: 18px;">terminal</span>
+<span>Inspect R / Python Core Scripts</span>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface px-4 py-2 rounded text-body-md font-medium transition-colors cursor-pointer">
+<span class="material-symbols-outlined" style="font-size: 18px;">table_view</span>
+<span>Export Model Weight Matrix (CSV)</span>
+</button>
+</div>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-size: 15px;">fingerprint</span>
+<span>SHA-256: 8f9b7c2...e4a19</span>
+</div>
+</div>
+</div>
+</div>
+    </main>
+  </section>
+
+  <footer class="w-full bg-surface-container-low border-t border-surface-variant mt-12 py-8 px-4 sm:px-6 lg:px-8"><div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6"><div class="flex flex-col space-y-1.5 max-w-2xl"><span class="font-label-mono text-label-mono uppercase text-on-surface font-semibold">National Statistical Office (NSO), MoSPI, Sardar Patel Bhawan, Sansad Marg, New Delhi 110001</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Prototype Airfare Price Index (APIx) formulated under High-Frequency CPI Alternative Data Initiative. Not a consumer booking service. All index values and monetary figures represent demonstration aggregated statistical models.</p></div><div class="flex flex-col items-start md:items-end space-y-1"><span class="font-label-mono text-label-mono text-on-surface-variant">Engine: <span class="text-on-surface font-semibold">APIx Engine v2.4.8-beta</span></span><span class="font-label-mono text-label-mono text-on-surface-variant">Mathematical Core: <span class="text-on-surface font-semibold">Laspeyres-Fisher Chain Aggregation</span></span><span class="font-label-mono text-label-mono text-on-secondary-fixed-variant">Sovereign Microdata Node DEL-NSO-04</span></div></div></footer>
+
+  
+<!-- NATIONAL GAZETTE BULLETIN MODAL -->
+<div id="bulletin-modal" class="fixed inset-0 z-[100] modal-backdrop flex items-center justify-center hidden p-4">
+  <div class="bg-surface-container-lowest border border-outline/30 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="p-6 border-b border-surface-variant flex items-center justify-between bg-surface-container-low">
+      <div class="flex items-center space-x-3">
+        <img alt="MoSPI Emblem" class="h-8 w-auto" src="assets/logo.svg"/>
+        <div>
+          <span class="font-label-mono text-label-mono text-on-surface-variant uppercase font-semibold">MoSPI / NSO Official Bulletin</span>
+          <h2 class="font-headline-md text-headline-md font-bold text-on-surface">National Airfare Price Index (APIx) Summary</h2>
+        </div>
+      </div>
+      <button id="btn-close-modal" class="text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+    
+    <div class="p-6 space-y-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-surface-container-low p-3 rounded border border-surface-variant">
+          <span class="font-label-mono text-body-sm text-on-surface-variant block">Gazette Ref</span>
+          <span class="font-label-mono text-metric-md font-bold text-on-surface">NSO-APIX-2023-Q1</span>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded border border-surface-variant">
+          <span class="font-label-mono text-body-sm text-on-surface-variant block">Index Headline</span>
+          <span class="font-metric-lg font-bold text-primary">112.80</span>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded border border-surface-variant">
+          <span class="font-label-mono text-body-sm text-on-surface-variant block">MoM Inflation</span>
+          <span class="font-metric-lg font-bold text-emerald-700">+2.1%</span>
+        </div>
+        <div class="bg-surface-container-low p-3 rounded border border-surface-variant">
+          <span class="font-label-mono text-body-sm text-on-surface-variant block">CPI Lead Window</span>
+          <span class="font-metric-lg font-bold text-on-surface">17.6 Days</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="font-headline-sm font-bold text-on-surface">Executive Statistical Abstract</h3>
+        <p class="font-body-md text-on-surface-variant leading-relaxed">
+          The National Airfare Price Index (APIx) recorded a headline level of 112.80 (Base Jan 2023 = 100.00), demonstrating a modest +0.8% weekly variance and +6.4% YoY trajectory across 42 representative domestic trunk corridors. Microdata validation confirms 100.0% schema compliance across 452,088 continuous fare quotes ingested from Dataset1. Air passenger yield compression at the 30-day advance purchase horizon offset walk-up surge pricing observed during early-booking windows.
+        </p>
+      </div>
+
+      <div class="bg-surface-container-low p-4 rounded border border-surface-variant font-label-mono text-body-sm space-y-1">
+        <div class="flex justify-between"><span class="text-on-surface-variant">Sovereign Data Center:</span><span class="text-on-surface font-semibold">NIC MeghRaj Cloud / Node DEL-NSO-04</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Underlying Microdata Corpus:</span><span class="text-on-surface font-semibold">Dataset1 (Cleaned_dataset.csv &amp; Scraped_dataset.csv)</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">Total Microdata Quotes:</span><span class="text-on-surface font-semibold">452,088 observations</span></div>
+        <div class="flex justify-between"><span class="text-on-surface-variant">MoSPI-QAF Validation Grade:</span><span class="text-emerald-700 font-bold">Grade A (93.4/100)</span></div>
+      </div>
+    </div>
+
+    <div class="p-6 border-t border-surface-variant bg-surface-container-low flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-2 text-on-surface-variant font-body-sm">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span>Approved for Macroeconomic Research &amp; Policy Use</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <button id="btn-print-bulletin" class="flex items-center space-x-1.5 bg-surface-container-highest hover:bg-secondary-fixed text-on-surface px-4 py-2 rounded transition-colors font-body-md font-medium">
+          <span class="material-symbols-outlined text-[18px]">print</span>
+          <span>Print Gazette</span>
+        </button>
+        <button id="btn-download-csv" class="flex items-center space-x-1.5 bg-primary text-on-primary hover:bg-secondary transition-colors px-4 py-2 rounded shadow transition-colors font-body-md font-medium">
+          <span class="material-symbols-outlined text-[18px]">download</span>
+          <span>Download Microdata CSV</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div id="toast-container" class="fixed bottom-6 right-6 z-[110] space-y-2 pointer-events-none"></div>
+
+<!-- FLOATING PRECISION CHART TOOLTIP -->
+<div id="chart-tooltip" class="fixed pointer-events-none z-[120] bg-primary text-on-primary rounded px-3 py-2 text-label-mono text-[11px] shadow-2xl border border-secondary/50 opacity-0 transition-opacity duration-150">
+  <div id="chart-tooltip-content"></div>
+</div>
+
+
+  <script src="dataset1_analytics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

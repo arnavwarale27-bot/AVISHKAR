@@ -1,0 +1,124 @@
+/* APIx India Analytics Platform - Sovereign Statistical Design System Tokens */
+:root {
+  --color-primary: #0B192C;
+  --color-secondary: #1E3E62;
+  --color-saffron: #EA580C;
+  --color-amber: #D97706;
+  --color-surface-base: #FAF8FF;
+  --color-surface-white: #FFFFFF;
+  --color-border: #E2E8F0;
+}
+
+/* Tabular figures for econometric exactitude */
+.font-label-mono,
+.font-code-formula,
+.font-metric-xl,
+.font-metric-lg,
+.font-metric-md,
+td.font-label-mono,
+span.font-label-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* View transitions */
+.view-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.view-panel.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  background-color: rgba(11, 25, 44, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* Pulse animation for live data telemetry */
+@keyframes telemetry-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.15); }
+}
+
+.telemetry-live-dot {
+  animation: telemetry-pulse 2s infinite ease-in-out;
+}
+
+/* Streaming Quote Row Flash Animation */
+@keyframes row-flash {
+  0% { background-color: rgba(16, 185, 129, 0.22); }
+  100% { background-color: transparent; }
+}
+
+.row-newly-ingested {
+  animation: row-flash 2.5s ease-out;
+}
+
+/* Dynamic Interactive SVG Charts */
+.chart-line-path {
+  transition: d 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-area-path {
+  transition: d 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-dot {
+  transition: transform 0.2s ease, fill 0.2s ease;
+  transform-origin: center;
+}
+
+.chart-dot:hover {
+  transform: scale(1.6);
+  cursor: pointer;
+}
+
+/* Floating High-Precision Chart Tooltip */
+#chart-tooltip {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 10px 25px -5px rgba(11, 25, 44, 0.18), 0 8px 10px -6px rgba(11, 25, 44, 0.10);
+}
+
+/* Print styling for National Gazette Bulletin */
+@media print {
+  .fixed, nav, button, #toast-container, .no-print {
+    display: none !important;
+  }
+  main {
+    padding-top: 0 !important;
+    background: #FFFFFF !important;
+  }
+  .view-panel {
+    display: block !important;
+    opacity: 1 !important;
+    page-break-after: always;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+}
