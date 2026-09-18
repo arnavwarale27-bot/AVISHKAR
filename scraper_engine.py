@@ -13,6 +13,8 @@ import time
 import math
 import random
 import hashlib
+import urllib.request
+import urllib.error
 from datetime import datetime, timedelta, timezone
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +22,15 @@ DATASET_DIR = os.path.join(BASE_DIR, 'Dataset1')
 LIVE_CSV = os.path.join(DATASET_DIR, 'Live_Scraped_Dataset.csv')
 LIVE_JSON = os.path.join(DATASET_DIR, 'Live_Scraped_Dataset.json')
 TELEMETRY_JSON = os.path.join(DATASET_DIR, 'live_scraper_telemetry.json')
+
+IS_VERCEL = bool(os.environ.get('VERCEL'))
+SUPABASE_URL = os.environ.get('SUPABASE_URL', '').rstrip('/')
+SUPABASE_KEY = (
+    os.environ.get('SUPABASE_SERVICE_ROLE_KEY')
+    or os.environ.get('SUPABASE_KEY')
+    or os.environ.get('SUPABASE_ANON_KEY')
+    or ''
+)
 
 # Active route corridors and city codes
 AIRPORT_HUBS = {
@@ -92,18 +103,63 @@ def get_record_hash(date_of_journey, flight_code, travel_class, source, destinat
     return hashlib.sha256(canonical_str.encode('utf-8')).hexdigest()[:16]
 
 class ScrapingEngine:
-    def __init__(self):
-        os.makedirs(DATASET_DIR, exist_ok=True)
+    def __init__(self, supabase_url=None, supabase_key=None):
+        self.supabase_url = (supabase_url or SUPABASE_URL).rstrip('/')
+        self.supabase_key = supabase_key or SUPABASE_KEY
+
+        # Determine writable file directory (safe on Vercel read-only filesystem)
+        if IS_VERCEL or not os.access(BASE_DIR, os.W_OK):
+            self.runtime_dir = '/tmp'
+            self.live_csv = '/tmp/Live_Scraped_Dataset.csv'
+            self.telemetry_json = '/tmp/live_scraper_telemetry.json'
+            self.live_json = '/tmp/Live_Scraped_Dataset.json'
+        else:
+            self.runtime_dir = DATASET_DIR
+            self.live_csv = LIVE_CSV
+            self.telemetry_json = TELEMETRY_JSON
+            self.live_json = LIVE_JSON
+
+        try:
+            os.makedirs(self.runtime_dir, exist_ok=True)
+        except OSError:
+            pass
+
         self.existing_hashes = set()
         self.total_records = 0
         self.duplicates_eliminated_historical = 0
+
         self._load_existing_dataset()
+        self._load_hashes_from_supabase()
+
+    def _load_hashes_from_supabase(self):
+        """Fetches existing hashes from Supabase PostgreSQL to ensure global deduplication across serverless lambdas."""
+        if not (self.supabase_url and self.supabase_key):
+            return
+        try:
+            url = f"{self.supabase_url}/rest/v1/apix_live_quotes?select=record_hash&limit=10000"
+            headers = {
+                'apikey': self.supabase_key,
+                'Authorization': f"Bearer {self.supabase_key}"
+            }
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                for row in data:
+                    h = row.get('record_hash')
+                    if h:
+                        self.existing_hashes.add(h)
+                if len(data) > self.total_records:
+                    self.total_records = len(data)
+        except Exception as e:
+            # Fallback gracefully to local dataset if offline or table uninitialized
+            pass
 
     def _load_existing_dataset(self):
-        """Loads existing records to prevent duplicates across multiple scraping runs."""
-        if os.path.exists(LIVE_CSV):
+        """Loads existing records from CSV to prevent duplicates across multiple scraping runs."""
+        target_csv = self.live_csv if os.path.exists(self.live_csv) else LIVE_CSV
+        if os.path.exists(target_csv):
             try:
-                with open(LIVE_CSV, 'r', encoding='utf-8') as f:
+                with open(target_csv, 'r', encoding='utf-8') as f:
                     reader = csv.DictReader(f)
                     for row in reader:
                         r_hash = row.get('record_hash')
@@ -111,17 +167,20 @@ class ScrapingEngine:
                             self.existing_hashes.add(r_hash)
                         self.total_records += 1
             except Exception as e:
-                print(f"Warning loading {LIVE_CSV}: {e}")
+                print(f"Warning loading {target_csv}: {e}")
         else:
-            # Create CSV with headers
-            with open(LIVE_CSV, 'w', encoding='utf-8', newline='') as f:
-                writer = csv.writer(f)
-                writer.writerow(CSV_HEADERS)
+            try:
+                with open(self.live_csv, 'w', encoding='utf-8', newline='') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(CSV_HEADERS)
+            except OSError:
+                pass
 
         # Load historical telemetry if available
-        if os.path.exists(TELEMETRY_JSON):
+        target_telemetry = self.telemetry_json if os.path.exists(self.telemetry_json) else TELEMETRY_JSON
+        if os.path.exists(target_telemetry):
             try:
-                with open(TELEMETRY_JSON, 'r', encoding='utf-8') as f:
+                with open(target_telemetry, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     self.duplicates_eliminated_historical = data.get('historical_duplicates_eliminated', 0)
             except Exception:
@@ -302,20 +361,112 @@ class ScrapingEngine:
 
         return unique_records, analysis_stats
 
+    def _sync_records_to_supabase(self, records):
+        """Pushes unique records to Supabase apix_live_quotes using standard library urllib."""
+        if not (self.supabase_url and self.supabase_key and records):
+            return
+        try:
+            url = f"{self.supabase_url}/rest/v1/apix_live_quotes"
+            payload = []
+            for r in records:
+                payload.append({
+                    'record_hash': r['record_hash'],
+                    'timestamp_utc': r['timestamp_utc'],
+                    'date_of_journey': r['date_of_journey'],
+                    'journey_day': r.get('journey_day', ''),
+                    'airline': r['airline'],
+                    'carrier_code': r.get('carrier_code', ''),
+                    'flight_code': r['flight_code'],
+                    'class': r['class'],
+                    'source': r['source'],
+                    'destination': r['destination'],
+                    'departure_time': r['departure_time'],
+                    'arrival_time': r['arrival_time'],
+                    'duration_hours': float(r['duration_hours']) if r.get('duration_hours') else None,
+                    'stops': r['stops'],
+                    'days_left': int(r['days_left']) if r.get('days_left') else None,
+                    'fare': float(r['fare']),
+                    'jevons_index': float(r['jevons_index']) if r.get('jevons_index') else None,
+                    'anomaly_status': r.get('anomaly_status', 'VALIDATED_NORMAL')
+                })
+            data = json.dumps(payload).encode('utf-8')
+            headers = {
+                'apikey': self.supabase_key,
+                'Authorization': f"Bearer {self.supabase_key}",
+                'Content-Type': 'application/json',
+                'Prefer': 'resolution=ignore-duplicates, return=minimal'
+            }
+            req = urllib.request.Request(url, data=data, headers=headers, method='POST')
+            with urllib.request.urlopen(req, timeout=6) as resp:
+                pass
+        except Exception as e:
+            print(f"Warning: Supabase quote sync failed: {e}")
+
+    def _sync_telemetry_to_supabase(self, analysis_stats):
+        """Pushes execution telemetry to Supabase apix_scraper_telemetry."""
+        if not (self.supabase_url and self.supabase_key):
+            return
+        try:
+            econ = analysis_stats.get('econometrics', {})
+            payload = [{
+                'quotes_scraped': analysis_stats.get('total_scraped_in_batch', 0),
+                'duplicates_eliminated': analysis_stats.get('duplicates_eliminated_in_batch', 0),
+                'unique_committed': analysis_stats.get('unique_records_retained', 0),
+                'deduplication_rate_pct': analysis_stats.get('deduplication_rate_pct', 0.0),
+                'dutot_mean': econ.get('dutot_mean'),
+                'jevons_geom_mean': econ.get('jevons_geom_mean'),
+                'median_p50': econ.get('median_p50'),
+                'iqr': econ.get('iqr'),
+                'upper_fence': econ.get('upper_fence'),
+                'anomalies_detected': econ.get('anomalies_detected', 0),
+                'client_source': 'vercel_serverless' if os.environ.get('VERCEL') else 'local_server'
+            }]
+            data = json.dumps(payload).encode('utf-8')
+            headers = {
+                'apikey': self.supabase_key,
+                'Authorization': f"Bearer {self.supabase_key}",
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            }
+            url = f"{self.supabase_url}/rest/v1/apix_scraper_telemetry"
+            req = urllib.request.Request(url, data=data, headers=headers, method='POST')
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                pass
+        except Exception as e:
+            print(f"Notice: Supabase telemetry sync: {e}")
+
     def commit_to_dataset(self, unique_records, analysis_stats):
-        """Appends verified unique records to Live_Scraped_Dataset.csv and updates JSON telemetry."""
+        """Appends verified unique records to storage (Supabase Cloud + CSV) and updates JSON telemetry."""
+        # 1. Update in-memory state
         if unique_records:
-            with open(LIVE_CSV, 'a', encoding='utf-8', newline='') as f:
-                writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
-                for rec in unique_records:
-                    writer.writerow(rec)
-                    self.existing_hashes.add(rec['record_hash'])
-                    self.total_records += 1
+            for rec in unique_records:
+                self.existing_hashes.add(rec['record_hash'])
+                self.total_records += 1
 
         self.duplicates_eliminated_historical += analysis_stats['duplicates_eliminated_in_batch']
 
+        # 2. Push to Supabase Cloud if configured
+        if self.supabase_url and self.supabase_key:
+            self._sync_records_to_supabase(unique_records)
+            self._sync_telemetry_to_supabase(analysis_stats)
+
+        # 3. Write to local / tmp CSV if file system allows
+        try:
+            if unique_records:
+                file_exists = os.path.exists(self.live_csv)
+                with open(self.live_csv, 'a', encoding='utf-8', newline='') as f:
+                    writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
+                    if not file_exists:
+                        writer.writerow({h: h for h in CSV_HEADERS})
+                    for rec in unique_records:
+                        writer.writerow(rec)
+        except OSError as e:
+            print(f"Notice: Local CSV write skipped on read-only runtime: {e}")
+
+        storage_backend = 'Supabase PostgreSQL Cloud' if (self.supabase_url and self.supabase_key) else 'Local CSV'
         telemetry = {
             'engine_status': 'ACTIVE_STREAMING',
+            'storage_backend': storage_backend,
             'last_scrape_timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
             'ist_timestamp': (datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)).strftime('%Y-%m-%d %H:%M:%S IST'),
             'dataset_file': 'Dataset1/Live_Scraped_Dataset.csv',
@@ -326,16 +477,17 @@ class ScrapingEngine:
             'latest_sample_quotes': unique_records[:10]
         }
 
-        # Write telemetry JSON
-        with open(TELEMETRY_JSON, 'w', encoding='utf-8') as f:
-            json.dump(telemetry, f, indent=2)
-
-        # Write snapshot JSON
-        with open(LIVE_JSON, 'w', encoding='utf-8') as f:
-            json.dump({
-                'metadata': telemetry,
-                'recent_quotes': unique_records[:50]
-            }, f, indent=2)
+        # Safe telemetry writes
+        try:
+            with open(self.telemetry_json, 'w', encoding='utf-8') as f:
+                json.dump(telemetry, f, indent=2)
+            with open(self.live_json, 'w', encoding='utf-8') as f:
+                json.dump({
+                    'metadata': telemetry,
+                    'recent_quotes': unique_records[:50]
+                }, f, indent=2)
+        except OSError:
+            pass
 
         return telemetry
 

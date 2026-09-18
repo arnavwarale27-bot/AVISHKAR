@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/scrape-live",
+      "destination": "/api/scrape_live.py"
+    },
+    {
+      "source": "/api/live-status",
+      "destination": "/api/live_status.py"
+    },
+    {
+      "source": "/api/live-dataset",
+      "destination": "/api/live_dataset.py"
+    },
+    {
+      "source": "/api/cpi-data",
+      "destination": "/api/cpi_data.py"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    },
+    {
+      "source": "/dataset1_analytics.(js|json)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
+      ]
+    }
+  ]
+}

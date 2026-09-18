@@ -1,0 +1,4 @@
+# APIx India — Python Serverless Dependencies
+# The platform is engineered to run on Python 3.10+ standard libraries
+# (urllib, json, csv, hashlib, http.server) with zero external dependencies
+# for ultra-fast serverless cold starts (<100ms) on Vercel.

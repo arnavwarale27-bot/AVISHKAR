@@ -1,0 +1,24 @@
+# Vercel Deployment Ignore Rules
+# Excludes heavy raw historical CSV datasets from serverless lambdas.
+# Analytical aggregates are pre-compiled in dataset1_analytics.js / dataset1_analytics.json.
+
+Dataset1/Cleaned_dataset.csv
+Dataset1/Scraped_dataset.csv
+Dataset1/cpi_640.xlsx
+*.zip
+*.tar.gz
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.github/
+.vscode/
+.idea/
+.DS_Store
+*.log
+scratch/
+.env
+.env.*
+.venv/
+env/
+venv/
